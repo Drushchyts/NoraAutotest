@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Acceptance suite">
     <listeners>
-        <listener class-name="by.stormnet.automation.core.common.AnnotationTransformer"/>
+        <listener class-name="nora.automation.core.common.AnnotationTransformer"/>
     </listeners>
-    <test verbose="2" name="login test">
+    <test verbose="2" name="Nora Test Suite">
         <classes>
-            <class name="by.stormnet.web.LoanTest"/>
-            <class name="by.stormnet.web.CollectionTest"/>
-            <class name="by.stormnet.web.SettingsTest"/>
-<!--            <class name="by.stormnet.web.OnlinerNewsTest"/>-->
-<!--            <class name="by.stormnet.web.OnlinerCatalogTest"/>-->
+            <class name="api.authorization.AuthNoraGoTv"/>
+            <class name="api.authorization.AuthNoraGoFastTv"/>
+            <class name="nora.web.PackagesModTest"/>
+            <class name="nora.web.SubscribersModTest"/>
+            <class name="nora.web.TvChannelsModTest"/>
+            <class name="nora.web.RadioChannelsModTest"/>
+            <class name="nora.web.VideoOnDemandModTest"/>
+            <class name="nora.web.CategoriesAndSeriesModTest"/>
+            <class name="nora.web.ChannelsAndServicesModTest"/>
+<!--            <class name="nora.web.DrmServiceModTest"/>-->
         </classes>
     </test>
 </suite>
