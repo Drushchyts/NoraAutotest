@@ -89,6 +89,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <includes>
+                        <include>PackagesModTest.java</include>
+                    </includes>
                     <!--                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>-->
                     <testFailureIgnore>true</testFailureIgnore>
                     <!--                    <systemPropertyVariables>-->
