@@ -21,12 +21,6 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
         <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M4</version>
-            <type>maven-plugin</type>
-        </dependency>
-        <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>3.2.0</version>
@@ -82,24 +76,24 @@
                     <reportVersion>2.6.0</reportVersion>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-surefire-report-plugin</artifactId>-->
-<!--                <version>3.0.0-M4</version>-->
-<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-testng</artifactId>
+                        <version>3.0.0-M4</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
-                    <forkCount>0</forkCount>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <classesDirectory>${project.build.outputDirectory}</classesDirectory>
                     <testFailureIgnore>true</testFailureIgnore>
-<!--                    <shutdown>kill</shutdown> &lt;!&ndash; Use it if required&ndash;&gt;-->
-<!--                    <systemPropertyVariables>-->
-<!--                        <xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>-->
-<!--                    </systemPropertyVariables>-->
+                    <systemPropertyVariables>
+                        <xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>
+                    </systemPropertyVariables>
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
