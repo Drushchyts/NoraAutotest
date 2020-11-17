@@ -92,8 +92,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <shutdown>kill</shutdown> <!-- Use it if required-->
+<!--                    <testFailureIgnore>true</testFailureIgnore>-->
+<!--                    <shutdown>kill</shutdown> &lt;!&ndash; Use it if required&ndash;&gt;-->
                     <systemPropertyVariables>
                         <xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>
                     </systemPropertyVariables>
