@@ -92,13 +92,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
+                    <forkCount>0</forkCount>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <classesDirectory>${project.build.outputDirectory}</classesDirectory>
                     <testFailureIgnore>true</testFailureIgnore>
 <!--                    <shutdown>kill</shutdown> &lt;!&ndash; Use it if required&ndash;&gt;-->
-                    <systemPropertyVariables>
-                        <xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>
-                    </systemPropertyVariables>
+<!--                    <systemPropertyVariables>-->
+<!--                        <xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>-->
+<!--                    </systemPropertyVariables>-->
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
