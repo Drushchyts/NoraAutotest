@@ -4,7 +4,7 @@ import nora.web.pages.AbstractPage;
 
 public class AnnAndRemindersPage extends AbstractPage {
 
-    private String annAndReminderButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[2]/a[6]";
+    private String annAndReminderButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[2]/a[7]";
     private String subjectFiled = "//input[@id='subject']";
     private String messageField = "//textarea[@id='message']";
     private String saveButton = "//button[@id='in-save1']";

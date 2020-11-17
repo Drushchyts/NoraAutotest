@@ -16,6 +16,7 @@ public class PackagesModTest {
     STBChannelListHelper stbChannelListHelper = new STBChannelListHelper();
     AnnAndRemindersHelper annAndRemindersHelper = new AnnAndRemindersHelper();
     AddCouponsHelper addCouponsHelper = new AddCouponsHelper();
+    ContentSetsHelper contentSetsHelper = new ContentSetsHelper();
 
     private String username;
     private String password;
@@ -54,6 +55,11 @@ public class PackagesModTest {
     }
 
     @Test(dependsOnMethods = "stbSettings")
+    public void contentSets() {
+        contentSetsHelper.clickCouponsButton();
+    }
+
+    @Test(dependsOnMethods = "contentSets")
     public void coupons() {
         addCouponsHelper.clickCouponsButton();
     }

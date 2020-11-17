@@ -4,7 +4,7 @@ import nora.web.pages.AbstractPage;
 
 public class STBSettingsPage extends AbstractPage {
 
-    private String stbSettingsButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[2]/a[4]";
+    private String stbSettingsButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[2]/a[5]";
     private String timeZoneField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[3]/form[1]/div[1]/div[3]/div[1]/div[1]/div[1]/a[1]/span[2]/span[1]";
     private String selectTimeZone = "//span[contains(text(),'Europe/Jersey')]";
     private String pinCodeField = "//input[@id='pincode']";
