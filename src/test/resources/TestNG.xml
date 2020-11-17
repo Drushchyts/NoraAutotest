@@ -14,7 +14,7 @@
             <class name="nora.web.VideoOnDemandModTest"/>
             <class name="nora.web.CategoriesAndSeriesModTest"/>
             <class name="nora.web.ChannelsAndServicesModTest"/>
-            <class name="nora.web.DrmServiceModTest"/>
+<!--            <class name="nora.web.DrmServiceModTest"/>-->
         </classes>
     </test>
 </suite>

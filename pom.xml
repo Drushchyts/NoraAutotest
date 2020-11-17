@@ -7,7 +7,7 @@
     <artifactId>id</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+<!--        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>-->
         <aspectj.version>1.8.10</aspectj.version>
         <allure-testng.version>2.6.0</allure-testng.version>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -82,17 +82,17 @@
                     <reportVersion>2.6.0</reportVersion>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>3.0.0-M4</version>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-report-plugin</artifactId>-->
+<!--                <version>3.0.0-M4</version>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
-<!--                    <testFailureIgnore>true</testFailureIgnore>-->
+                    <testFailureIgnore>true</testFailureIgnore>
 <!--                    <shutdown>kill</shutdown> &lt;!&ndash; Use it if required&ndash;&gt;-->
                     <systemPropertyVariables>
                         <xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>
