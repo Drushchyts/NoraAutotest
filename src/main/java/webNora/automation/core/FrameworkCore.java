@@ -14,7 +14,7 @@ public class FrameworkCore {
 
 
     public static WebDriver getInstance() {
-        if (browser.equals(BrowserConstants.CHROME)) {
+        if (browser.equals(BrowserConstants.CHROMIUM)) {
             webDriver = new ChromeDriver();
         } else {
             if (browser.equals(BrowserConstants.FIREFOX)) {
