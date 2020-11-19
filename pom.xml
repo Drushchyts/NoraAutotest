@@ -90,12 +90,14 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <forkCount>1</forkCount>
+                    <forkCount>3</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <useManifestOnlyJar>false</useManifestOnlyJar>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <includes>
                         <include>PackagesModTest.java</include>
                     </includes>
-                    <!--                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>-->
+                     <!--                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>-->
                     <testFailureIgnore>true</testFailureIgnore>
                     <!--                    <systemPropertyVariables>-->
                     <!--                        <xmlOutputDir>${project.build.directory}/surefire</xmlOutputDir>-->
