@@ -11,7 +11,7 @@ public class DrmServiceModTest {
 
     @BeforeClass
     public void startUp() {
-        System.out.println("TEST=====drmServiceHelper=====START");
+        System.out.println("TEST=====DrmServiceModTest=====START");
     }
 
     @Test
@@ -24,6 +24,6 @@ public class DrmServiceModTest {
     @AfterClass
     public void tearDown() {
         System.out.println("TEST=====DrmServiceModTest=====FINISH");
-        drmServiceHelper.close();
+//        drmServiceHelper.close();
     }
 }

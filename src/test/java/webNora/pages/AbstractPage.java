@@ -36,16 +36,6 @@ public class AbstractPage extends FrameworkCore {
         Thread.sleep(1000);
     }
 
-    public AbstractPage clickFinalButton() {
-        getElement(finalButton).click();
-        return this;
-    }
-
-    public AbstractPage getFinalButton() {
-        waitForElementVisible(getElementBy(finalButton));
-        return this;
-    }
-
     public AbstractPage fillUsernameField(String username) {
         getElement(usernameField).sendKeys(username);
         return this;
