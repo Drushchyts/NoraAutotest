@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class FrameworkCore {
-    private static WebDriver webDriver;
+    public static WebDriver webDriver;
     private static String browser = IOUtils.loadGenericProperties("browser", "configuration");
     public static String baseUrl = IOUtils.loadGenericProperties("noraUrl", "configuration");
     public static String packageUrl = IOUtils.loadGenericProperties("packageUrl", "configuration");
