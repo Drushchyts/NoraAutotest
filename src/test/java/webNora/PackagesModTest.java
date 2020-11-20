@@ -22,12 +22,8 @@ public class PackagesModTest {
     private String password;
 
     @BeforeClass
-    public void startUp() {
-        System.out.println("TEST=====PackagesModTest=====START");
-    }
-
-    @BeforeClass
     public void setUp() {
+        System.out.println("TEST=====PackagesModTest=====START");
         username = IOUtils.loadGenericProperties("username", "configuration");
         password = IOUtils.loadGenericProperties("password", "configuration");
         abstractHelper.openAdminPage();
