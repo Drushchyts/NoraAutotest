@@ -4,10 +4,12 @@ import webNora.helpers.vodHelpers.AddVodHelper;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import webNora.helpers.vodHelpers.DeleteVodHelper;
 
 public class VideoOnDemandModTest {
 
     AddVodHelper addVodHelper = new AddVodHelper();
+    DeleteVodHelper deleteVodHelper = new DeleteVodHelper();
 
     @BeforeClass
     public void startUp() {
@@ -22,6 +24,11 @@ public class VideoOnDemandModTest {
     @Test(dependsOnMethods = "vodTest")
     public void addVideoOnDemand() throws InterruptedException {
         addVodHelper.addVod();
+    }
+
+    @Test(dependsOnMethods = "addVideoOnDemand")
+    public void deleteVideoOnDemand() {
+        deleteVodHelper.deleteVod();
     }
 
     @AfterClass
