@@ -21,14 +21,16 @@ public class PackagesModTest {
     private String username;
     private String password;
 
-    @BeforeClass
-    public void setUp() {
-        System.out.println("TEST=====PackagesModTest=====START");
-        username = IOUtils.loadGenericProperties("username", "configuration");
-        password = IOUtils.loadGenericProperties("password", "configuration");
-        abstractHelper.openAdminPage();
-        abstractHelper.loginAdmin(username, password);
-    }
+
+
+//    @BeforeClass
+//    public void setUp() {
+//        System.out.println("TEST=====PackagesModTest=====START");
+//        username = IOUtils.loadGenericProperties("username", "configuration");
+//        password = IOUtils.loadGenericProperties("password", "configuration");
+//        abstractHelper.openAdminPage();
+//        abstractHelper.loginAdmin(username, password);
+//    }
 
     @Test
     public void createPackage() {
