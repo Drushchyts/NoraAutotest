@@ -8,7 +8,7 @@
         <classes>
             <class name="apiNora.authorization.AuthNoraGoTv"/>
             <class name="apiNora.authorization.AuthNoraGoFastTv"/>
-<!--            <class name="webNora.PackagesModTest"/>-->
+            <class name="webNora.PackagesModTest"/>
             <class name="webNora.SubscribersModTest"/>
             <class name="webNora.TvChannelsModTest"/>
             <class name="webNora.RadioChannelsModTest"/>
