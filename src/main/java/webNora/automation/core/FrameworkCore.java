@@ -1,10 +1,10 @@
 package webNora.automation.core;
 
-import webNora.automation.core.utils.BrowserConstants;
-import webNora.automation.core.utils.IOUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import webNora.automation.core.utils.BrowserConstants;
+import webNora.automation.core.utils.IOUtils;
 
 public class FrameworkCore {
     private static WebDriver webDriver;
