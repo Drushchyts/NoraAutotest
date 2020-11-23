@@ -19,6 +19,7 @@ public class Dasdafqf {
 
         //System.setProperty("webdriver.chrome.driver", "chromium-browser.exe");
         ChromeOptions options = new ChromeOptions();
+        options.setBinary("/snap/chromium/1411/usr/lib/chromium-browser/chrome");  //chrome binary location specified here
         options.addArguments("--no-sandbox");
         options.addArguments("--headless"); //!!!should be enabled for Jenkins
         options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
