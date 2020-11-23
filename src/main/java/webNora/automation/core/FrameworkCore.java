@@ -20,9 +20,11 @@ public class FrameworkCore {
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("window-size=1936,1080");
             chromeOptions.addArguments("--incognito");
+            chromeOptions.addArguments("--dns-prefetch-disable");
+            chromeOptions.addArguments("--always-authorize-plugins");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--no-sandbox");
-            chromeOptions.addArguments("--headless");
+//            chromeOptions.addArguments("--headless");
             webDriver = new ChromeDriver(chromeOptions);
 
         } else {
