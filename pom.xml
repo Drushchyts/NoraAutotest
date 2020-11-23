@@ -100,13 +100,6 @@
                         <suiteXmlFile>src\test\resources\TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
