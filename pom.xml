@@ -95,10 +95,18 @@
                     <reuseForks>true</reuseForks>
                     <testFailureIgnore>true</testFailureIgnore>
                     <useSystemClassLoader>false</useSystemClassLoader>
+                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
