@@ -6,7 +6,7 @@
     </listeners>
     <test verbose="5" name="Nora Test Suite">
         <classes>
-            <class name="webNora.Test"></class>
+            <class name="webNora.Dasdafqf"></class>
             <!--            <class name="apiNora.authorization.AuthNoraGoTv"/>-->
             <!--            <class name="apiNora.authorization.AuthNoraGoFastTv"/>-->
             <!--            <class name="webNora.PackagesModTest"/>-->
