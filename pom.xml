@@ -97,7 +97,6 @@
                 </dependency>
             </dependencies>
                 <configuration>
-                    <forkMode>never</forkMode>
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\TestNG.xml</suiteXmlFile>
