@@ -6,19 +6,19 @@
     </listeners>
     <test verbose="2" name="Nora Test Suite">
         <classes>
-                        <class name="webNora.Dasdafqf"></class>
-<!--            <class name="apiNora.authorization.AuthNoraGoTv"/>-->
-            <!--            <class name="apiNora.authorization.AuthNoraGoFastTv"/>-->
-            <!--            <class name="webNora.PackagesModTest"/>-->
-            <!--            <class name="webNora.SubscribersModTest"/>-->
-            <!--            <class name="webNora.TvChannelsModTest"/>-->
-            <!--            <class name="webNora.RadioChannelsModTest"/>-->
-            <!--            <class name="webNora.VideoOnDemandModTest"/>-->
-            <!--            <class name="webNora.CategoriesAndSeriesModTest"/>-->
-            <!--            <class name="webNora.ChannelsAndServicesModTest"/>-->
-            <!--            <class name="webNora.DrmServiceModTest"/>-->
-            <!--            <class name="webNora.DevicesModTest"/>-->
-            <!--            <class name="webNora.InfoModTest"/>-->
+<!--                        <class name="webNora.Dasdafqf"></class>-->
+            <class name="apiNora.authorization.AuthNoraGoTv"/>
+            <class name="apiNora.authorization.AuthNoraGoFastTv"/>
+            <class name="webNora.PackagesModTest"/>
+            <class name="webNora.SubscribersModTest"/>
+            <class name="webNora.TvChannelsModTest"/>
+            <class name="webNora.RadioChannelsModTest"/>
+            <class name="webNora.VideoOnDemandModTest"/>
+            <class name="webNora.CategoriesAndSeriesModTest"/>
+            <class name="webNora.ChannelsAndServicesModTest"/>
+            <class name="webNora.DrmServiceModTest"/>
+            <class name="webNora.DevicesModTest"/>
+            <class name="webNora.InfoModTest"/>
         </classes>
     </test>
 </suite>
