@@ -56,7 +56,7 @@ public class AbstractPage extends FrameworkCore {
     }
 
     public void openUrl(String url) {
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.get(url);
     }
 

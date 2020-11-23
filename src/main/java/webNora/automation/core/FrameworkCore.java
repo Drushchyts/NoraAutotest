@@ -18,6 +18,10 @@ public class FrameworkCore {
     public static WebDriver getInstance() {
         if (browser.equals(BrowserConstants.CHROMIUM)) {
             ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("window-size=1936,1080");
+            chromeOptions.addArguments("--incognito");
+            chromeOptions.addArguments("--disable-gpu");
+            chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--headless");
             webDriver = new ChromeDriver(chromeOptions);
 
