@@ -1,5 +1,6 @@
 package webNora.pages;
 
+import org.openqa.selenium.chrome.ChromeDriver;
 import webNora.automation.core.FrameworkCore;
 import webNora.automation.core.utils.PauseLenght;
 import org.openqa.selenium.By;
@@ -20,7 +21,9 @@ public class AbstractPage extends FrameworkCore {
     private String submit = "//button[contains(text(),'Sign in')]";
     private String checker = "//div[@class='alert alert-success alert-dismissable']";
 
-    private static WebDriver driver = getInstance();
+    //private static WebDriver driver = getInstance();
+
+    private static WebDriver driver = new ChromeDriver();
 
     public void navigateAdmin() {
         openUrl(baseUrl);
