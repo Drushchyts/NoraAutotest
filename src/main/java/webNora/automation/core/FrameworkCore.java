@@ -18,15 +18,12 @@ public class FrameworkCore {
 
     public static WebDriver getInstance() {
         if (browser.equals(BrowserConstants.CHROMIUM)) {
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("window-size=1936,1080");
-            chromeOptions.addArguments("--incognito");
-            chromeOptions.addArguments("--dns-prefetch-disable");
-            chromeOptions.addArguments("--always-authorize-plugins");
-            chromeOptions.addArguments("--disable-gpu");
-            chromeOptions.addArguments("--no-sandbox");
-//            chromeOptions.addArguments("--headless");
-            webDriver = new ChromeDriver(chromeOptions);
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--no-sandbox");
+            options.addArguments("--headless"); //!!!should be enabled for Jenkins
+            options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
+            options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
+            webDriver = new ChromeDriver(options);
 
         } else {
             if (browser.equals(BrowserConstants.FIREFOX)) {
