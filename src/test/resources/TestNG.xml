@@ -4,11 +4,11 @@
     <listeners>
         <listener class-name="webNora.automation.core.common.AnnotationTransformer"/>
     </listeners>
-    <test verbose="5" name="Nora Test Suite">
+    <test verbose="2" name="Nora Test Suite">
         <classes>
             <!--            <class name="apiNora.authorization.AuthNoraGoTv"/>-->
             <!--            <class name="apiNora.authorization.AuthNoraGoFastTv"/>-->
-            <class name="webNora.Hellow"></class>
+            <class name="webNora.Dasdafqf"></class>
             <!--            <class name="webNora.PackagesModTest"/>-->
             <!--            <class name="webNora.SubscribersModTest"/>-->
             <!--            <class name="webNora.TvChannelsModTest"/>-->
