@@ -8,7 +8,8 @@ import webNora.automation.core.utils.BrowserConstants;
 import webNora.automation.core.utils.IOUtils;
 
 public class FrameworkCore {
-    private static WebDriver webDriver;
+
+    public static WebDriver webDriver;
 
     private static String browser = IOUtils.loadGenericProperties("browser", "configuration");
 
