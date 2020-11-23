@@ -1,5 +1,6 @@
 package webNora;
 
+import webNora.automation.core.FrameworkCore;
 import webNora.automation.core.utils.IOUtils;
 import webNora.helpers.AbstractHelper;
 import webNora.helpers.packageHelpers.*;
@@ -7,7 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PackagesModTest {
+public class PackagesModTest extends FrameworkCore {
 
     AbstractHelper abstractHelper = new AbstractHelper();
     AddPackageHelper addPackageHelper = new AddPackageHelper();
