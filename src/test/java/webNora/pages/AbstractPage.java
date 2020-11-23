@@ -21,9 +21,8 @@ public class AbstractPage extends FrameworkCore {
     private String submit = "//button[contains(text(),'Sign in')]";
     private String checker = "//div[@class='alert alert-success alert-dismissable']";
 
-    //private static WebDriver driver = getInstance();
+    private static WebDriver driver = getInstance();
 
-    public static WebDriver driver = new ChromeDriver();
 
     public void navigateAdmin() {
         openUrl(baseUrl);

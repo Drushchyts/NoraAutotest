@@ -6,18 +6,19 @@
     </listeners>
     <test verbose="5" name="Nora Test Suite">
         <classes>
-            <class name="apiNora.authorization.AuthNoraGoTv"/>
-            <class name="apiNora.authorization.AuthNoraGoFastTv"/>
-            <class name="webNora.PackagesModTest"/>
-            <class name="webNora.SubscribersModTest"/>
-            <class name="webNora.TvChannelsModTest"/>
-            <class name="webNora.RadioChannelsModTest"/>
-            <class name="webNora.VideoOnDemandModTest"/>
-            <class name="webNora.CategoriesAndSeriesModTest"/>
-            <class name="webNora.ChannelsAndServicesModTest"/>
-            <!--            <class name="webNora.DrmServiceModTest"/>-->
-            <class name="webNora.DevicesModTest"/>
-            <class name="webNora.InfoModTest"/>
+            <class name="webNora.Test"></class>
+            <!--            <class name="apiNora.authorization.AuthNoraGoTv"/>-->
+            <!--            <class name="apiNora.authorization.AuthNoraGoFastTv"/>-->
+            <!--            <class name="webNora.PackagesModTest"/>-->
+            <!--            <class name="webNora.SubscribersModTest"/>-->
+            <!--            <class name="webNora.TvChannelsModTest"/>-->
+            <!--            <class name="webNora.RadioChannelsModTest"/>-->
+            <!--            <class name="webNora.VideoOnDemandModTest"/>-->
+            <!--            <class name="webNora.CategoriesAndSeriesModTest"/>-->
+            <!--            <class name="webNora.ChannelsAndServicesModTest"/>-->
+            <!--                        <class name="webNora.DrmServiceModTest"/>-->
+            <!--            <class name="webNora.DevicesModTest"/>-->
+            <!--            <class name="webNora.InfoModTest"/>-->
         </classes>
     </test>
 </suite>
