@@ -7,6 +7,7 @@ import java.util.Properties;
 public class IOUtils {
     public static String loadGenericProperties(String key, String fileName){
         Properties properties = new Properties();
+
         FileInputStream filePath;
 
         try {

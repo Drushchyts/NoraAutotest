@@ -8,12 +8,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class FrameworkCore {
     private static WebDriver webDriver;
+
     private static String browser = IOUtils.loadGenericProperties("browser", "configuration");
+
     public static String baseUrl = IOUtils.loadGenericProperties("noraUrl", "configuration");
 
 
     public static WebDriver getInstance() {
-        if (browser.equals(BrowserConstants.CHROME)) {
+        if (browser.equals(BrowserConstants.CHROMIUM)) {
             webDriver = new ChromeDriver();
         } else {
             if (browser.equals(BrowserConstants.FIREFOX)) {
