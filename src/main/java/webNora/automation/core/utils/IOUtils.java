@@ -20,6 +20,4 @@ public class IOUtils {
         return properties.getProperty(key);
     }
 
-
-
 }
