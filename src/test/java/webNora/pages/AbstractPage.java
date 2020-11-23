@@ -23,7 +23,7 @@ public class AbstractPage extends FrameworkCore {
 
     //private static WebDriver driver = getInstance();
 
-    private static WebDriver driver = new ChromeDriver();
+    public static WebDriver driver = new ChromeDriver();
 
     public void navigateAdmin() {
         openUrl(baseUrl);
