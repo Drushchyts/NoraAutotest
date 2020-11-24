@@ -23,7 +23,6 @@ public class PackagesModTest extends FrameworkCore {
     private String password;
 
 
-
     @BeforeClass
     public void setUp() {
         System.out.println("TEST=====PackagesModTest=====START");
@@ -48,12 +47,7 @@ public class PackagesModTest extends FrameworkCore {
                 .generalSettings();
     }
 
-    @Test(dependsOnMethods = "activationSettings", skipFailedInvocations = true)
-    public void stbSettings() throws InterruptedException {
-        stbSettingsHelper.addStbSettings();
-    }
-
-    @Test(dependsOnMethods = "stbSettings")
+    @Test(dependsOnMethods = "activationSettings")
     public void contentSets() {
         contentSetsHelper.clickCouponsButton();
     }
@@ -61,6 +55,11 @@ public class PackagesModTest extends FrameworkCore {
     @Test(dependsOnMethods = "contentSets")
     public void coupons() {
         addCouponsHelper.clickCouponsButton();
+    }
+
+    @Test(dependsOnMethods = "coupons", skipFailedInvocations = true)
+    public void stbSettings() throws InterruptedException {
+        stbSettingsHelper.addStbSettings();
     }
 
     @Test(dependsOnMethods = "coupons", skipFailedInvocations = true)
