@@ -13,7 +13,7 @@
             <class name="webNora.SubscribersModTest"/>
             <class name="webNora.TvChannelsModTest"/>
             <class name="webNora.RadioChannelsModTest"/>
-            <class name="webNora.VideoOnDemandModTest"/>
+<!--            <class name="webNora.VideoOnDemandModTest"/>-->
             <class name="webNora.CategoriesAndSeriesModTest"/>
             <class name="webNora.ChannelsAndServicesModTest"/>
 <!--            <class name="webNora.DrmServiceModTest"/>-->

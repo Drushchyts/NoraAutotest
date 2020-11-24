@@ -18,7 +18,7 @@ public class AddVodPage extends AbstractPage {
     private String selectPackage = "//span[contains(text(),'1 (copy)')]";
     private String lengthClock = "//tbody/tr[2]/td[1]/input[1]";
     private String lengthMinute = "//tbody/tr[2]/td[3]/input[1]";
-    private String stbField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[6]/div[1]/div[1]/input[1]";
+    private String stbField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[5]/div[1]/div[1]/input[1]";
     private String saveButton = "//button[contains(text(),'Save')]";
     private String nameVod = "Test Title";
     private String searchField = "//input[@id='_searchBar']";
@@ -78,7 +78,7 @@ public class AddVodPage extends AbstractPage {
         return this;
     }
 
-    public AddVodPage enterSTB() throws InterruptedException {
+    public AddVodPage enterSTB() {
         jsScroll();
         getElement(stbField).sendKeys("https://mkdev.setplex.net/nora/vods/new");
         return this;

@@ -2,7 +2,7 @@ package webNora.automation.core.utils;
 
 
 public enum PauseLenght {
-    MAX(120),
+    MAX(10),
     MIN(5),
     AJAX(10),
     AVG(30);
