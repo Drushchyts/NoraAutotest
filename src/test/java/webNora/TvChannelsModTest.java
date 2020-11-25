@@ -14,7 +14,7 @@ public class TvChannelsModTest {
 
     @BeforeClass
     public void startUp() {
-        System.out.println("TEST=====TvChannelMod=====START");
+        System.out.println("TEST=====TvChannelsModTest=====START");
     }
 
     @Test
@@ -34,6 +34,6 @@ public class TvChannelsModTest {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("Test=====TvChannelMod=====FINISH");
+        System.out.println("TEST=====TvChannelsModTest=====FINISH");
     }
 }

@@ -5,24 +5,18 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import org.testng.log4testng.Logger;
 
 public class AuthNoraGoFastTv extends AbstractApi {
 
-    private static final Logger LOG = Logger.getLogger(AuthNoraGoFastTv.class);
-    private static long startTime;
-    private static long startTimeClass;
     private static RequestSpecification httpRequest;
 
 
     @BeforeClass
-    public void starClass() {
-        System.out.println("START FLOW");
+    public void starUp() {
+        System.out.println("TEST=====AuthNoraGoFastTv=====START");
         startTimeClass = System.currentTimeMillis();
-
     }
 
     @BeforeMethod
@@ -38,12 +32,16 @@ public class AuthNoraGoFastTv extends AbstractApi {
         startTime = System.currentTimeMillis();
     }
 
-    @Test(priority = 1)
-    public void authNoraGoTvTest() {
+    @Test
+    public void authNoraGoFastTvTest() {
         io.restassured.response.Response response = httpRequest.request(Method.POST);
         Assert.assertEquals(200, response.statusCode());
-        System.out.println("Time for request authNoraGoTvTest: " + (System.currentTimeMillis() - startTime) + " ms");
     }
 
+    @AfterClass
+    public void tearDown() {
+        System.out.println("Time for request authNoraGoTvTest: " + (System.currentTimeMillis() - startTime) + " ms");
+        System.out.println("TEST=====AuthNoraGoFastTv=====FINISH");
+    }
 
 }

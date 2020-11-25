@@ -62,7 +62,7 @@ public class PackagesModTest extends FrameworkCore {
         stbSettingsHelper.addStbSettings();
     }
 
-    @Test(dependsOnMethods = "coupons", skipFailedInvocations = true)
+    @Test(dependsOnMethods = "stbSettings", skipFailedInvocations = true)
     public void stbChannelList() {
         stbChannelListHelper.clickSTBChannelList();
     }
