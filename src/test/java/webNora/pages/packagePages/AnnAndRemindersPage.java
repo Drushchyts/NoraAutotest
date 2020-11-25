@@ -50,6 +50,7 @@ public class AnnAndRemindersPage extends AbstractPage {
     }
 
     public AnnAndRemindersPage clickAddReminderButton() {
+        waitForElementClickable(getElementBy(addReminderBUtton));
         getElement(addReminderBUtton).click();
         return this;
 
@@ -84,6 +85,7 @@ public class AnnAndRemindersPage extends AbstractPage {
     }
 
     public AnnAndRemindersPage clickSaveActivationTOAButton() {
+        waitForElementClickable(getElementBy(saveActivationTOAButton));
         getElement(saveActivationTOAButton).click();
         return this;
     }

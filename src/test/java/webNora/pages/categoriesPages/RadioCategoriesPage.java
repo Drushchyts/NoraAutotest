@@ -27,7 +27,7 @@ public class RadioCategoriesPage extends AbstractPage {
     public RadioCategoriesPage enterName() throws InterruptedException {
         sleep(1000);
         waitForElementVisible(getElementBy(nameField));
-        getElement(nameField).sendKeys("Test Name" + (int) (Math.random() * 999));
+        getElement(nameField).sendKeys("Test Name" + (int) (Math.random() * 99999));
         return this;
     }
 

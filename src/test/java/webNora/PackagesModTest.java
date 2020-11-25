@@ -72,7 +72,6 @@ public class PackagesModTest extends FrameworkCore {
         annAndRemindersHelper.addAnnouncement()
                 .addReminder()
                 .activationTOA();
-        //addSubInPackHelper.clickBackButton().addSubscriberInPackage();
     }
 
     @AfterClass

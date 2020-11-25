@@ -23,6 +23,6 @@ public class InfoModTest {
     @AfterClass
     public void tearDown() {
         System.out.println("TEST=====InfoModTest=====FINISH");
-        viewInfoHelper.close();
+//        viewInfoHelper.close();
     }
 }
