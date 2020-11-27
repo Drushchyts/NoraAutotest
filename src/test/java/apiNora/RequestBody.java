@@ -29,7 +29,7 @@ public class RequestBody extends AbstractApi {
             "\"logoUrl\":null\n" +
             "}";
 
-    private String createSubscriberBody = "{\n" +
+    public String createSubscriberBody = "{\n" +
             "    \"id\": null,\n" +
             "    \"name\": \"User278\",\n" +
             "    \"accountNumber\": null,\n" +
@@ -85,5 +85,9 @@ public class RequestBody extends AbstractApi {
             "    \"user\": null,\n" +
             "    \"zipcode\": \"565\",\n" +
             "    \"type\": null\n" +
+            "}";
+
+    public String tvShowOrganizerBody = "{\n" +
+            "    \"searchStr\":\"tv shows_ organizer_list\"\n" +
             "}";
 }

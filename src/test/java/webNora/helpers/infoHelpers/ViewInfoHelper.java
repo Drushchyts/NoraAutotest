@@ -11,6 +11,12 @@ public class ViewInfoHelper extends AbstractHelper {
         viewInfoPage.clickInfoModButton();
         return this;
     }
+
+    public ViewInfoHelper checkVersionsNora(){
+        viewInfoPage.checkNoraVersion()
+                .checkNoraFrontendVersion();
+        return this;
+    }
 }
 
 

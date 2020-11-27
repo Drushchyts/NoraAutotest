@@ -15,9 +15,9 @@ public class DistributorsModTest {
     }
 
     @Test
-    public void infoModTest() throws InterruptedException {
+    public void distributorModTest() throws InterruptedException {
         addDistributorHelper.clickDistributors();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @AfterClass

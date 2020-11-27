@@ -20,6 +20,11 @@ public class InfoModTest {
         Thread.sleep(2000);
     }
 
+    @Test(dependsOnMethods = "infoModTest")
+    public void checkNoraVersion() {
+        viewInfoHelper.checkVersionsNora();
+    }
+
     @AfterClass
     public void tearDown() {
         System.out.println("TEST=====InfoModTest=====FINISH");
