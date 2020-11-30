@@ -20,6 +20,7 @@ public class AbstractApi {
     public String baseUrlNoraGo = "https://mkdev.setplex.net/nora/auth";
     public String baseUrlNoraTv = "https://test-rc.norago.tv/nora/auth";
     public String baseUrlNoraCreatePackage = "https://mkdev.setplex.net/nora/api/networks";
+    public String baseUrlNoraDeletePackage = "https://mkdev.setplex.net/nora/api/networks/";
     public String baseUrlNoraCreateSubscriber = "https://mkdev.setplex.net/nora/api/subscribers";
     public String baseUrlTvShowOrganizer = "https://mkdev.setplex.net/nora/api/tvshows/extra/tvshows";
 

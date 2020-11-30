@@ -11,7 +11,7 @@ public class AnnAndRemindersHelper extends AbstractHelper {
         annAndRemindersPage.clickActivationSettingsButton()
                 .enterSubject()
                 .enterMessage();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         annAndRemindersPage.clickSaveButton();
         return this;
     }

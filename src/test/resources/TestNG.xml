@@ -8,7 +8,7 @@
         <classes>
             <class name="apiNora.authorization.AuthNoraGoTv"/>
             <class name="apiNora.authorization.AuthNoraGoFastTv"/>
-            <class name="apiNora.packages.CreatePackageApi"/>
+            <class name="apiNora.packages.CreateAndDeletePackageApi"/>
             <class name="apiNora.subscribers.CreateSubscriberApi"/>
             <class name="apiNora.tvShow.TvShowOrganizerSearch"/>
             <class name="webNora.PackagesModTest"/>
@@ -18,12 +18,14 @@
             <class name="webNora.VideoOnDemandModTest"/>
             <class name="webNora.CategoriesAndSeriesModTest"/>
             <class name="webNora.ChannelsAndServicesModTest"/>
-            <!--            <class name="webNora.DrmServiceModTest"/>-->
+            <class name="webNora.DrmServiceModTest"/>
             <class name="webNora.DevicesModTest"/>
+            <class name="webNora.SettingsModTest"/>
             <class name="webNora.InfoModTest"/>
             <class name="webNora.UsersModTest"/>
             <class name="webNora.ExternalUserModTest"/>
             <class name="webNora.DistributorsModTest"/>
+            <class name="webNora.ReportsModTest"/>
         </classes>
     </test>
 </suite>

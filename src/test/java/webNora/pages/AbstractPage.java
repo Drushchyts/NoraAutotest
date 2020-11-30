@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class AbstractPage extends FrameworkCore {
@@ -139,10 +140,19 @@ public class AbstractPage extends FrameworkCore {
         js.executeScript("window.scrollBy(0,600)", " ");
     }
 
-   /* public int getResolusionNumber(String element) {
-        String str = getElement(element).getText();
-        String[] transfer = str.split(".|\"");
-        return Integer.valueOf(transfer[0]);
-    }*/
+    /* public int getResolusionNumber(String element) {
+         String str = getElement(element).getText();
+         String[] transfer = str.split(".|\"");
+         return Integer.valueOf(transfer[0]);
+     }*/
 
+
+    public static String getRandom() {
+        String s = "123456789";
+        StringBuffer number = new StringBuffer();
+        for (int i = 0; i < 5; i++) {
+            number.append(s.charAt(new Random().nextInt(s.length())));
+        }
+        return number.toString();
+    }
 }

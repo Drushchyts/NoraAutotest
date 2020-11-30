@@ -63,11 +63,13 @@ public class AnnAndRemindersPage extends AbstractPage {
     }
 
     public AnnAndRemindersPage enterMessageReminder() {
+        waitForElementVisible(getElementBy(messageReminderField));
         getElement(messageReminderField).sendKeys("Test Reminder Message");
         return this;
     }
 
     public AnnAndRemindersPage enterDaysReminder() {
+        waitForElementVisible(getElementBy(daysReminderField));
         getElement(daysReminderField).sendKeys("234");
         return this;
     }

@@ -11,7 +11,7 @@ public class RadioChannelsModTest {
 
     @BeforeClass
     public void startUp() {
-        System.out.println("TEST-----RadioChannelsModTest-----START");
+        System.out.println("TEST=====RadioChannelsModTest=====START");
     }
 
 
@@ -23,7 +23,7 @@ public class RadioChannelsModTest {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("TEST-----RadioChannelsModTest-----FINISH");
+        System.out.println("TEST=====RadioChannelsModTest=====FINISH");
 //        addRadioHelper.close();
     }
 }

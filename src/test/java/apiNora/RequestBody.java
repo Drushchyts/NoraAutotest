@@ -5,7 +5,7 @@ public class RequestBody extends AbstractApi {
     private String getRandom = "213213";
 
     public String createPackageBody = "{\n" +
-            "\"id\":null,\n" +
+            "\"id\":\"999\",\n" +
             "\"name\":\"QA auto\",\n" +
             "\"backgroundColor\":null,\n" +
             "\"categorySets\":[],\n" +

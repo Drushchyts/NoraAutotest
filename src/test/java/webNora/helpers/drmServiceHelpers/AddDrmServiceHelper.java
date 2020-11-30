@@ -8,8 +8,13 @@ public class AddDrmServiceHelper extends AbstractHelper {
     AddDrmServicePage drmServicePage = new AddDrmServicePage();
 
     public AddDrmServiceHelper clickDrmServiceButton() {
-        drmServicePage.clickDrmServiceMod()
-                .clickAddDRMServiceButton()
+        drmServicePage.clickDrmServiceMod();
+
+        return this;
+    }
+
+    public AddDrmServiceHelper addDrmService() throws InterruptedException {
+        drmServicePage.clickAddDRMServiceButton()
                 .enterNameDRM()
                 .selectDRMProvider()
                 .enterPXValue()

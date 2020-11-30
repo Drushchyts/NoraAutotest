@@ -20,6 +20,12 @@ public class DrmServiceModTest {
         Thread.sleep(2000);
     }
 
+    @Test(dependsOnMethods = "drmServiceTest")
+    public void addDrmServiceTest() throws InterruptedException {
+        drmServiceHelper.addDrmService();
+        Thread.sleep(2000);
+    }
+
 
     @AfterClass
     public void tearDown() {

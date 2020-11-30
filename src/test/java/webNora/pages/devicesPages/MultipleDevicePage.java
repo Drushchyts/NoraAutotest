@@ -19,7 +19,7 @@ public class MultipleDevicePage extends AbstractPage {
     private String macTwoField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[7]/div[2]/input[1]";
     private String macThreeField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[8]/div[2]/input[1]";
     private String addDevicesButton = "//button[@id='in-save3']";
-    private static String randomSeriesNumber = "" + (int) (Math.random() * 999);
+    private String randomSeriesNumber = "" + (int) (Math.random() * 99999);
 
     public MultipleDevicePage clickAddDeviceButton() {
         waitForElementClickable(getElementBy(addDeviceButton));
@@ -47,9 +47,9 @@ public class MultipleDevicePage extends AbstractPage {
     }
 
     public MultipleDevicePage enterDeviceAndMac() {
-        getElement(deviceOneField).sendKeys(randomSeriesNumber);
-        getElement(deviceTwoField).sendKeys(randomSeriesNumber);
-        getElement(deviceThreeField).sendKeys(randomSeriesNumber);
+        getElement(deviceOneField).sendKeys(getRandom());
+        getElement(deviceTwoField).sendKeys(getRandom());
+        getElement(deviceThreeField).sendKeys(getRandom());
         getElement(macOneField).sendKeys("00:11:23:45:65:44");
         getElement(macTwoField).sendKeys("00:11:23:45:65:44");
         getElement(macThreeField).sendKeys("00:11:23:45:65:44");

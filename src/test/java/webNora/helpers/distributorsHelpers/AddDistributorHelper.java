@@ -11,4 +11,17 @@ public class AddDistributorHelper extends AbstractHelper {
         addDistributorPage.clickDistributorsModButton();
         return this;
     }
+
+    public AddDistributorHelper addDistributor() throws InterruptedException {
+        addDistributorPage.clickAddDistributorButton()
+                .selectPackageDistributor()
+                .enterFirsName()
+                .enterLastName()
+                .enterPassword()
+                .enterEmail()
+                .enterCompany()
+                .clickCreateDistributorButton()
+                .clickCancelDistributorButton();
+        return this;
+    }
 }
