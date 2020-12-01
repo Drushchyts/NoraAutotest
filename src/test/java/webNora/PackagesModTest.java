@@ -1,13 +1,12 @@
 package webNora;
 
-import jdk.jfr.Description;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import webNora.automation.core.FrameworkCore;
 import webNora.automation.core.utils.IOUtils;
 import webNora.helpers.AbstractHelper;
 import webNora.helpers.packageHelpers.*;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 public class PackagesModTest extends FrameworkCore {
 
@@ -35,7 +34,7 @@ public class PackagesModTest extends FrameworkCore {
 
     @Test
     public void createPackage() {
-        addPackageHelper.clickPackageButton();
+        addPackageHelper.clickPackageButton()
                 .createPackage();
     }
 
