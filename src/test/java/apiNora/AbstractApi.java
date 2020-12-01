@@ -1,12 +1,9 @@
 package apiNora;
 
-import apiNora.authorization.AuthNoraGoFastTv;
 import io.restassured.RestAssured;
 import io.restassured.http.Cookie;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
-import org.testng.Assert;
-import org.testng.log4testng.Logger;
 
 import java.util.Random;
 
