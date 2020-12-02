@@ -23,7 +23,8 @@ public class CheckAndDeleteDistributorPage extends AbstractPage {
         return this;
     }
 
-    public CheckAndDeleteDistributorPage checkNamePackage() {
+    public CheckAndDeleteDistributorPage checkNamePackage() throws InterruptedException {
+        Thread.sleep(2000);
         waitForElementClickable(getElementBy(clickOther));
         getElement(clickOther).click();
         WebElement element = getElement(checkField);
