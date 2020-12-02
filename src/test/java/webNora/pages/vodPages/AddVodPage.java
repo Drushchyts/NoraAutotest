@@ -15,7 +15,7 @@ public class AddVodPage extends AbstractPage {
     private String starsField = "//textarea[@id='stars']";
     private String yearField = "//input[@id='year']";
     private String packageField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/a[1]/span[1]";
-    private String selectPackage = "//span[contains(text(),'1 (copy)')]";
+    private String selectPackage = "//span[contains(text(),'\"November2020\"')]";
     private String lengthClock = "//tbody/tr[2]/td[1]/input[1]";
     private String lengthMinute = "//tbody/tr[2]/td[3]/input[1]";
     private String stbField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/form[1]/div[2]/div[2]/div[5]/div[1]/div[1]/input[1]";

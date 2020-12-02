@@ -11,7 +11,7 @@ public class MultipleDevicePage extends AbstractPage {
     private String addDeviceButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/a[1]/i[1]";
     private String addMultipleDeviceButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/ul[1]/li[2]/a[1]";
     private String assignedPackagesField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/div[2]/form[1]/div[2]/div[1]/div[1]/div[1]/a[1]/span[1]";
-    private String selectAssignedPackages = "//span[contains(text(),'1 (copy)')]";
+    private String selectAssignedPackages = "//span[contains(text(),'\"November2020\"')]";
     private String deviceOneField = "//input[@id='dev0']";
     private String deviceTwoField = "//input[@id='dev1']";
     private String deviceThreeField = "//input[@id='dev2']";
@@ -39,7 +39,7 @@ public class MultipleDevicePage extends AbstractPage {
         return this;
     }
 
-    public MultipleDevicePage selectAssPackages() {
+    public MultipleDevicePage selectMultiplePackages() {
         getElement(assignedPackagesField).click();
         waitForElementClickable(getElementBy(selectAssignedPackages));
         getElement(selectAssignedPackages).click();

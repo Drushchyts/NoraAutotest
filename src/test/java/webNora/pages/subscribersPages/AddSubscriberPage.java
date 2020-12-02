@@ -7,7 +7,7 @@ public class AddSubscriberPage extends AbstractPage {
     private String subscriberButton = "//span[contains(text(),'Subscribers')]";
     private String addButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/a[1]/i[1]";
     private String packageField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/form[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[3]/b[1]";
-    private String checkPackage = "//span[contains(text(),'1 (copy)')]";
+    private String checkPackage = "//span[contains(text(),'\"November2020\"')]";
     private String pinCodeField = "//input[@id='ppincode']";
     private String usernameField = "//input[@id='pusername']";
     private String passwordField = "//input[@id='password']";

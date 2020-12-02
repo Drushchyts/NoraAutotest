@@ -7,7 +7,7 @@ import webNora.pages.AbstractPage;
 public class CheckAndDeleteDistributorPage extends AbstractPage {
 
     private String searchField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/st-select-multiple[1]/div[1]/div[1]/div[1]/input[1]";
-    private String selectPackage = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/st-select-multiple[1]/div[1]/div[1]/ul[1]/li[1]/div[6]/span[1]/span[1]";
+    private String selectPackage = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/st-select-multiple[1]/div[1]/div[1]/ul[1]/li[1]/div[3]/span[1]/span[1]";
     private String checkField = "//a[contains(text(),'sectant@mail.ru')]";
     private String namePackage = "sectant@mail.ru";
     private String clickOther = "//th[contains(text(),'User')]";

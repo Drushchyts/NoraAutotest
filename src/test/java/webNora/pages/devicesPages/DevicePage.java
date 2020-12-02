@@ -10,7 +10,7 @@ public class DevicePage extends AbstractPage {
     private String serialNumberField = "//input[@id='serial']";
     private String serialNumber = "" + (int) (Math.random() * 999 + 10);
     private String assignedPackagesField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/div[1]/form[1]/fieldset[1]/div[7]/div[1]/div[1]/div[1]/a[1]/span[1]";
-    private String selectAssignedPackages = "//span[contains(text(),'1 (copy)')]";
+    private String selectAssignedPackages = "//span[contains(text(),'\"November2020\"')]";
     private String saveDeviceButton = "//button[@id='in-save1']";
 
 

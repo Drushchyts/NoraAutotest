@@ -12,7 +12,7 @@ public class MultipleDeviceHelper extends AbstractHelper {
         multipleDevicePage.clickDevicesMod()
                 .clickAddDeviceButton()
                 .clickAddMultipleDeviceButton()
-                .selectAssPackages()
+                .selectMultiplePackages()
                 .enterDeviceAndMac()
                 .clickAddDevicesButton();
         return this;
