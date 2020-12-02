@@ -40,7 +40,7 @@ public class CreateAndDeletePackageApi extends AbstractApi {
         String urlForDelete = headers.getValue("Location");
         String[] parts = urlForDelete.split("/");
         idPackage = parts[parts .length-1];
-        System.out.println("Package create id: " + idPackage);
+        System.out.print("Package create id: " + idPackage);
         Assert.assertEquals(201, response.getStatusCode());
     }
 

@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 
-public class Hellow {
+public class Hello {
 
     WebDriver driver = new ChromeDriver();
 

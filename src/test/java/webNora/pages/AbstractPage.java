@@ -146,7 +146,6 @@ public class AbstractPage extends FrameworkCore {
          return Integer.valueOf(transfer[0]);
      }*/
 
-
     public static String getRandom() {
         String s = "123456789";
         StringBuffer number = new StringBuffer();

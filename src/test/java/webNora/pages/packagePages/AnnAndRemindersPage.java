@@ -24,7 +24,8 @@ public class AnnAndRemindersPage extends AbstractPage {
         return this;
     }
 
-    public AnnAndRemindersPage enterSubject() {
+    public AnnAndRemindersPage enterSubject() throws InterruptedException {
+        Thread.sleep(2000);
         waitForElementVisible(getElementBy(subjectFiled));
         getElement(subjectFiled).sendKeys("Test Subject");
         return this;
