@@ -80,7 +80,7 @@ public class PackagesModTest extends FrameworkCore {
                 .activationTOA();
     }
 
-    @Test(dependsOnMethods = "createPackage",invocationCount = 100)
+    @Test(dependsOnMethods = "announcementsAndReminders",invocationCount = 100)
     public void deletePackage() {
         addPackageHelper.clickPackageButton();
         deletePackageHelper.deletePackage();
