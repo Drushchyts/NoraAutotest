@@ -38,7 +38,7 @@ public class PackagesModTest extends FrameworkCore {
 
     @Test
     public void createPackage() {
-        addPackageHelper.clickPackageButton();
+        addPackageHelper.clickPackageButton()
                 .createPackage();
     }
 
