@@ -17,7 +17,7 @@ public class AddCouponsHelper extends AbstractHelper {
                 .enterNameCoupons()
                 .clickGeneratorCode()
                 .enterAmount()
-                .selectCurrencyCoupons()
+//                .selectCurrencyCoupons()
                 .clickCreateButton()
                 .checkCreateCoupon();
         return this;

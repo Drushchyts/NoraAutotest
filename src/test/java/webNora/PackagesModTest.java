@@ -8,8 +8,6 @@ import webNora.automation.core.utils.IOUtils;
 import webNora.helpers.AbstractHelper;
 import webNora.helpers.packageHelpers.*;
 
-import java.awt.*;
-
 
 public class PackagesModTest extends FrameworkCore {
 
@@ -80,7 +78,7 @@ public class PackagesModTest extends FrameworkCore {
                 .activationTOA();
     }
 
-    @Test(dependsOnMethods = "announcementsAndReminders",invocationCount = 100)
+    @Test(dependsOnMethods = "announcementsAndReminders")
     public void deletePackage() {
         addPackageHelper.clickPackageButton();
         deletePackageHelper.deletePackage();

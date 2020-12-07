@@ -47,12 +47,12 @@ public class AddCouponsPage extends AbstractPage {
         return this;
     }
 
-    public AddCouponsPage selectCurrencyCoupons() {
-        getElement(currencyField).click();
-        waitForElementClickable(getElementBy(selectCurrency));
-        getElement(selectCurrency).click();
-        return this;
-    }
+//    public AddCouponsPage selectCurrencyCoupons() {
+//        getElement(currencyField).click();
+//        waitForElementClickable(getElementBy(selectCurrency));
+//        getElement(selectCurrency).click();
+//        return this;
+//    }
 
     public AddCouponsPage clickCreateButton() {
         waitForElementClickable(getElementBy(createButton));
