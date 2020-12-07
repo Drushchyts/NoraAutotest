@@ -7,8 +7,19 @@ public class AddCouponsHelper extends AbstractHelper {
 
     AddCouponsPage addCouponsPage = new AddCouponsPage();
 
-    public AddCouponsHelper clickCouponsButton(){
+    public AddCouponsHelper clickCouponsButton() {
         addCouponsPage.clickCouponsButton();
+        return this;
+    }
+
+    public AddCouponsHelper addCoupons() {
+        addCouponsPage.clickAddCouponButton()
+                .enterNameCoupons()
+                .clickGeneratorCode()
+                .enterAmount()
+                .selectCurrencyCoupons()
+                .clickCreateButton()
+                .checkCreateCoupon();
         return this;
     }
 }

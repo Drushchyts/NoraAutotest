@@ -1,6 +1,9 @@
 package webNora.pages;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebElement;
 import webNora.automation.core.FrameworkCore;
 import webNora.automation.core.utils.PauseLenght;
 import org.openqa.selenium.By;
@@ -10,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -120,6 +124,19 @@ public class AbstractPage extends FrameworkCore {
         return list;
     }
 
+    public void moveElement(WebElement elementOne, WebElement elementTwo) {
+
+        Actions action = new Actions(driver);
+        action.clickAndHold(elementOne)
+                .pause(Duration.ofSeconds(2))
+                .moveToElement(elementTwo)
+                .pause(Duration.ofSeconds(2))
+                .release(elementOne)
+                .pause(Duration.ofSeconds(2))
+                .build()
+                .perform();
+    }
+
     public void navigateToTab(int num, List<String> webHendlers) {
         driver.switchTo().window(webHendlers.get(num));
     }
@@ -154,4 +171,25 @@ public class AbstractPage extends FrameworkCore {
         }
         return number.toString();
     }
+
+    public void dragDrop(String ByFrom, String ByTo) {
+        Actions action = new Actions(driver);
+        WebElement LocatorFrom = getElement(ByFrom);
+        WebElement LocatorTo = getElement(ByTo);
+        int xto = (LocatorTo.getLocation().x);
+        int yto = (LocatorTo.getLocation().y);
+        action.pause(Duration.ofSeconds(2))
+                .clickAndHold(LocatorFrom)
+                .pause(Duration.ofSeconds(2));
+//                .moveToElement(LocatorTo, xto, yto)
+//                .pause(Duration.ofSeconds(2))
+//                .release(LocatorTo)
+//                .build()
+//                .perform();
+//        ((JavascriptExecutor) driver).executeScript("function simulate(f,c,d,e){var b,a=null;for(b in eventMatchers)if(eventMatchers[b].test(c)){a=b;break}if(!a)return!1;document.createEvent?(b=document.createEvent(a),a==\"HTMLEvents\"?b.initEvent(c,!0,!0):b.initMouseEvent(c,!0,!0,document.defaultView,0,d,e,d,e,!1,!1,!1,!1,0,null),f.dispatchEvent(b)):(a=document.createEventObject(),a.detail=0,a.screenX=d,a.screenY=e,a.clientX=d,a.clientY=e,a.ctrlKey=!1,a.altKey=!1,a.shiftKey=!1,a.metaKey=!1,a.button=1,f.fireEvent(\"on\"+c,a));return!0} var eventMatchers={HTMLEvents:/^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,MouseEvents:/^(?:click|dblclick|mouse(?:down|up|over|move|out))$/}; " +
+//                        "simulate(arguments[0],\"mousedown\",0,0); simulate(arguments[0],\"mousemove\",arguments[1],arguments[2]); simulate(arguments[0],\"mouseup\",arguments[1],arguments[2]); ",
+//                LocatorFrom, xto, yto);
+//    }
+    }
+
 }

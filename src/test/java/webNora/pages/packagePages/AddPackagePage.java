@@ -28,7 +28,7 @@ public class AddPackagePage extends AbstractPage {
     }
 
     public AddPackagePage enterNamePackage() {
-        getElement(namePackageField).sendKeys("TestPackage" + (int) (Math.random() * 999));
+        getElement(namePackageField).sendKeys("TestPackage333");
         return this;
     }
 

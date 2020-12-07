@@ -8,6 +8,9 @@ import webNora.automation.core.utils.IOUtils;
 import webNora.helpers.AbstractHelper;
 import webNora.helpers.packageHelpers.*;
 
+import java.awt.*;
+
+
 public class PackagesModTest extends FrameworkCore {
 
     AbstractHelper abstractHelper = new AbstractHelper();
@@ -18,6 +21,7 @@ public class PackagesModTest extends FrameworkCore {
     AnnAndRemindersHelper annAndRemindersHelper = new AnnAndRemindersHelper();
     AddCouponsHelper addCouponsHelper = new AddCouponsHelper();
     ContentSetsHelper contentSetsHelper = new ContentSetsHelper();
+    DeletePackageHelper deletePackageHelper = new DeletePackageHelper();
 
     private String username;
     private String password;
@@ -34,7 +38,7 @@ public class PackagesModTest extends FrameworkCore {
 
     @Test
     public void createPackage() {
-        addPackageHelper.clickPackageButton()
+        addPackageHelper.clickPackageButton();
                 .createPackage();
     }
 
@@ -47,14 +51,16 @@ public class PackagesModTest extends FrameworkCore {
                 .generalSettings();
     }
 
-    @Test(dependsOnMethods = "activationSettings")
+    @Test(dependsOnMethods = "createPackage")
     public void contentSets() {
-        contentSetsHelper.clickCouponsButton();
+        contentSetsHelper.clickContentsSetsButton();
+//                .addContentSet();
     }
 
     @Test(dependsOnMethods = "contentSets")
     public void coupons() {
-        addCouponsHelper.clickCouponsButton();
+        addCouponsHelper.clickCouponsButton()
+                .addCoupons();
     }
 
     @Test(dependsOnMethods = "coupons", skipFailedInvocations = true)
@@ -72,6 +78,12 @@ public class PackagesModTest extends FrameworkCore {
         annAndRemindersHelper.addAnnouncement()
                 .addReminder()
                 .activationTOA();
+    }
+
+    @Test(dependsOnMethods = "createPackage",invocationCount = 100)
+    public void deletePackage() {
+        addPackageHelper.clickPackageButton();
+        deletePackageHelper.deletePackage();
     }
 
     @AfterClass
