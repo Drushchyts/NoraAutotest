@@ -51,7 +51,7 @@ public class PackagesModTest extends FrameworkCore {
                 .generalSettings();
     }
 
-    @Test(dependsOnMethods = "createPackage")
+    @Test(dependsOnMethods = "activationSettings")
     public void contentSets() {
         contentSetsHelper.clickContentsSetsButton();
 //                .addContentSet();
