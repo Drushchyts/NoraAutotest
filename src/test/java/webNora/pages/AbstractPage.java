@@ -1,18 +1,20 @@
 package webNora.pages;
 
+import org.aspectj.util.FileUtil;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import webNora.automation.core.FrameworkCore;
 import webNora.automation.core.utils.PauseLenght;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +36,11 @@ public class AbstractPage extends FrameworkCore {
 
     }
 
+    public void navigateNoraGo() {
+        openUrl(baseUrlNoraGo);
+
+    }
+
     public void sleep(int time) throws InterruptedException {
         Thread.sleep(time);
     }
@@ -50,6 +57,12 @@ public class AbstractPage extends FrameworkCore {
 
     public AbstractPage fillPasswordField(String password) {
         getElement(passwordField).sendKeys(password);
+        return this;
+    }
+
+    public AbstractPage openNewTab() {
+        getTabs();
+        navigateToTab(1, getTabs());
         return this;
     }
 
@@ -94,7 +107,7 @@ public class AbstractPage extends FrameworkCore {
         return By.className(element);
     }
 
-    public WebElement getElement(String element) {
+    public static WebElement getElement(String element) {
         return driver.findElement(By.xpath(element));
     }
 
@@ -157,6 +170,11 @@ public class AbstractPage extends FrameworkCore {
         js.executeScript("window.scrollBy(0,600)", " ");
     }
 
+    public void jsScrollUp() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,-400)", " ");
+    }
+
     /* public int getResolusionNumber(String element) {
          String str = getElement(element).getText();
          String[] transfer = str.split(".|\"");
@@ -170,6 +188,21 @@ public class AbstractPage extends FrameworkCore {
             number.append(s.charAt(new Random().nextInt(s.length())));
         }
         return number.toString();
+    }
+
+
+    public void openNewWindow() {
+        ((JavascriptExecutor) driver).executeScript("window.open()");
+
+    }
+
+    public void getScreen() {
+        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtil.copyFile(file, new File("screenshot.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void dragDrop(String ByFrom, String ByTo) {

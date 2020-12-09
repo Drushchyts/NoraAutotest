@@ -30,7 +30,7 @@ public class AddSubscriberPage extends AbstractPage {
     private String selectTimeZone = "//span[contains(text(),'Europe/Oslo')]";
     private String saveButton = "//button[@id='p-save1']";
 
-    public AddSubscriberPage clickSubscriberMod() {
+    public AddSubscriberPage clickSubscriberMod() throws InterruptedException {
         waitForElementClickable(getElementBy(subscriberButton));
         getElement(subscriberButton).click();
         return this;
@@ -57,7 +57,7 @@ public class AddSubscriberPage extends AbstractPage {
     }
 
     public AddSubscriberPage enterUsername() {
-        getElement(usernameField).sendKeys("AleksandrTest" + (int) (Math.random() * 999));
+        getElement(usernameField).sendKeys("AleksandrTest");
         return this;
     }
 

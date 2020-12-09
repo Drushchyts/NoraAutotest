@@ -7,7 +7,7 @@ public class AddSubscriberHelper extends AbstractHelper {
 
     AddSubscriberPage addSubscriberPage = new AddSubscriberPage();
 
-    public AddSubscriberHelper clickSubscriberButton() {
+    public AddSubscriberHelper clickSubscriberButton() throws InterruptedException {
         addSubscriberPage.clickSubscriberMod();
         return this;
     }
