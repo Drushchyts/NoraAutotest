@@ -11,7 +11,8 @@ public class CustomStreamsPage extends AbstractPage {
     private String checkField = "//span[contains(text(),'Custom Streams')]";
 
 
-    public CustomStreamsPage clickCustomerStreamButton() {
+    public CustomStreamsPage clickCustomerStreamButton() throws InterruptedException {
+        sleep(2000);
         getElement(customerStreamButton).click();
         return this;
     }

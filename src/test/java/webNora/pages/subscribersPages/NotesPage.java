@@ -13,7 +13,8 @@ public class NotesPage extends AbstractPage {
     private String addNotesButton = "//button[contains(text(),'Add Note')]";
     private String NoteSubjectField = "//input[@id='subject']";
 
-    public NotesPage clickNotesButton() {
+    public NotesPage clickNotesButton() throws InterruptedException {
+        sleep(2000);
         getElement(notesButton).click();
         return this;
     }
