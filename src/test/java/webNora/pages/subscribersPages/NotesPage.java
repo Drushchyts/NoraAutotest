@@ -14,7 +14,6 @@ public class NotesPage extends AbstractPage {
     private String NoteSubjectField = "//input[@id='subject']";
 
     public NotesPage clickNotesButton() {
-        waitForElementClickable(getElementBy(notesButton));
         getElement(notesButton).click();
         return this;
     }
