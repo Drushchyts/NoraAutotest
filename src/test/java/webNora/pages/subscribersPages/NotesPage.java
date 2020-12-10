@@ -15,6 +15,7 @@ public class NotesPage extends AbstractPage {
 
     public NotesPage clickNotesButton() throws InterruptedException {
         sleep(2000);
+        waitForElementVisible(getElementBy(notesButton));
         getElement(notesButton).click();
         return this;
     }

@@ -1,5 +1,7 @@
 package webNora;
 
+import webNora.helpers.noraGoHelpers.AddProfilesHelper;
+import webNora.helpers.noraGoHelpers.CloseNoraGoHelper;
 import webNora.helpers.noraGoHelpers.NoraGoWebHelper;
 import webNora.helpers.subscribersHelpers.*;
 import org.testng.annotations.AfterClass;
@@ -7,8 +9,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.awt.*;
+import java.util.logging.Logger;
 
 public class SubscribersModTest {
+
 
     AddSubscriberHelper addSubscriberHelper = new AddSubscriberHelper();
     AddDeviceHelper addDeviceHelper = new AddDeviceHelper();
@@ -18,6 +22,8 @@ public class SubscribersModTest {
     CustomStreamsHelper customStreamsHelper = new CustomStreamsHelper();
     NotesHelper notesHelper = new NotesHelper();
     NoraGoWebHelper noraGoWebHelper = new NoraGoWebHelper();
+    AddProfilesHelper addProfilesHelper = new AddProfilesHelper();
+    CloseNoraGoHelper closeNoraGoHelper = new CloseNoraGoHelper();
 
     @BeforeClass
     public void startUp() {
@@ -32,13 +38,13 @@ public class SubscribersModTest {
 
     }
 
-    @Test(dependsOnMethods = "subscribersTest")
+    @Test(dependsOnMethods = "subscribersTest", alwaysRun = true)
     public void addDeviceSubscriberTest() throws InterruptedException {
         addDeviceHelper.addDevice();
         Thread.sleep(2000);
     }
 
-    @Test(dependsOnMethods = "addDeviceSubscriberTest")
+    @Test(dependsOnMethods = "addDeviceSubscriberTest", alwaysRun = true)
     public void activationSubscriber() throws InterruptedException {
         activationHelper.activationSubscriber();
         Thread.sleep(2000);
@@ -50,13 +56,13 @@ public class SubscribersModTest {
         Thread.sleep(2000);
     }
 
-    @Test(dependsOnMethods = "deleteDeviceSubscriber", alwaysRun = true)
+    @Test(dependsOnMethods = "deleteDeviceSubscriber")
     public void customerStreamsSubscriber() throws InterruptedException {
         customStreamsHelper.checkCustomerPage();
         Thread.sleep(2000);
     }
 
-    @Test(dependsOnMethods = "customerStreamsSubscriber", alwaysRun = true)
+    @Test(dependsOnMethods = "customerStreamsSubscriber")
     public void notesSubscriber() throws InterruptedException {
         notesHelper.checkNotesPage();
         Thread.sleep(2000);
@@ -66,15 +72,28 @@ public class SubscribersModTest {
     public void noraWebTest() throws AWTException, InterruptedException {
         noraGoWebHelper.openWebNoraGo()
                 .loginNorGo();
+        Thread.sleep(2000);
     }
-//
-//
-//    @Test(dependsOnMethods = "noraWebTest")
-//    public void checkAbdDeleteSubscriberTest() throws InterruptedException {
-//        addSubscriberHelper.clickSubscriberButton();
-//        checkAndDeleteSubscriberHelper.deleteSubscriber();
-//        Thread.sleep(2000);
-//    }
+
+    @Test(dependsOnMethods = "noraWebTest")
+    public void addProfilesWeb() throws InterruptedException {
+        addProfilesHelper.addNewProfiles();
+        Thread.sleep(2000);
+    }
+
+    @Test(dependsOnMethods = "addProfilesWeb")
+    public void backToAdminPanel() throws InterruptedException {
+        closeNoraGoHelper.backAdminPanel();
+        Thread.sleep(2000);
+    }
+
+
+    @Test(dependsOnMethods = "backToAdminPanel")
+    public void checkAbdDeleteSubscriberTest() throws InterruptedException {
+        addSubscriberHelper.clickSubscriberButton();
+        checkAndDeleteSubscriberHelper.deleteSubscriber();
+        Thread.sleep(2000);
+    }
 
     @AfterClass
     public void tearDown() {

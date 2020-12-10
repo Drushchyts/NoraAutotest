@@ -66,6 +66,12 @@ public class AbstractPage extends FrameworkCore {
         return this;
     }
 
+    public AbstractPage backTab() {
+        getTabs();
+        navigateToTab(0, getTabs());
+        return this;
+    }
+
     public AbstractPage clickButton() {
         getElement(submit).click();
         return this;

@@ -31,17 +31,7 @@ public class NoraGoWebPage extends AbstractPage {
     public NoraGoWebPage clickLogin() throws InterruptedException {
         waitForElementClickable(getElementBy(loginButton));
         getElement(loginButton).click();
-        sleep(5000);
-        getScreen();
         return this;
     }
 
-    public NoraGoWebPage testText() throws InterruptedException {
-        sleep(5000);
-        getScreen();
-        waitForElementVisible(getElementBy(text));
-        WebElement element = getElement(text);
-        System.out.println(element.getText());
-        return this;
-    }
 }
