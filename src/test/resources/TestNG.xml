@@ -33,9 +33,9 @@
             <class name="webNora.ReportsModTest"/>
         </classes>
     </test>
-    <!--    <test verbose="2" name="Nora FrontView Test Suite">-->
-    <!--        <classes>-->
+        <test verbose="2" name="Nora FrontView Test Suite">
+            <classes>
 
-    <!--        </classes>-->
-    <!--    </test>-->
+            </classes>
+        </test>
 </suite>

@@ -25,7 +25,7 @@ public class AddDrmServicePage extends AbstractPage {
     }
 
     public AddDrmServicePage enterNameDRM() {
-        getElement(nameField).sendKeys("Test Name");
+        getElement(nameField).sendKeys("0000");
         return this;
     }
 

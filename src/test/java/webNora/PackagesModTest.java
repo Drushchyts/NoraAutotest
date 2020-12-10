@@ -1,12 +1,9 @@
 package webNora;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.PropertyConfigurator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.apache.log4j.Logger;
-import ru.yandex.qatools.allure.annotations.Severity;
 import webNora.automation.core.FrameworkCore;
 import webNora.automation.core.utils.IOUtils;
 import webNora.helpers.AbstractHelper;

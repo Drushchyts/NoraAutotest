@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import webNora.automation.core.utils.BrowserConstants;
 import webNora.automation.core.utils.IOUtils;
 
@@ -25,19 +26,20 @@ public class FrameworkCore {
     public static WebDriver getInstance() {
         if (browser.equals(BrowserConstants.CHROMIUM)) {
             ChromeOptions options = new ChromeOptions();
-            options.setBinary("/snap/chromium/1411/usr/lib/chromium-browser/chrome");  //chrome binary location specified here
+//            options.setBinary("/snap/chromium/1411/usr/lib/chromium-browser/chrome");  //chrome binary location specified here
+//            options.setBinary("/usr/lib/chromium-browser/chromedriver");  //chrome binary location specified here
             HashMap<String, Object> chromeLocalStatePrefs = new HashMap<>();
             List<String> experimentalFlags = new ArrayList<>();
             experimentalFlags.add("same-site-by-default-cookies@2");
             experimentalFlags.add("cookies-without-same-site-must-be-secure@2");
             chromeLocalStatePrefs.put("browser.enabled_labs_experiments", experimentalFlags);
             options.setExperimentalOption("localState", chromeLocalStatePrefs);
-//            options.addArguments("--no-sandbox");
-//            options.addArguments("--headless"); //!!!should be enabled for Jenkins
-//            options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
-//            options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
-//            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-//            options.setExperimentalOption("useAutomationExtension", false);
+            options.addArguments("--no-sandbox");
+            options.addArguments("--headless"); //!!!should be enabled for Jenkins
+            options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
+            options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
+            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+            options.setExperimentalOption("useAutomationExtension", false);
             webDriver = new ChromeDriver(options);
 
         } else {
