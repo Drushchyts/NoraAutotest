@@ -26,7 +26,7 @@ public class TvCategoriesPage extends AbstractPage {
     public TvCategoriesPage enterName() throws InterruptedException {
         sleep(1000);
         waitForElementVisible(getElementBy(nameField));
-        getElement(nameField).sendKeys("Test Name" + (int) (Math.random() * 99999));
+        getElement(nameField).sendKeys("0000Test");
         return this;
     }
 

@@ -15,7 +15,8 @@ public class AddActivationSettingsPage extends AbstractPage {
     private String currencyConvertersButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[4]/a[1]";
     private String generalSettingsButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[3]/div[1]/div[1]/ul[1]/li[5]/a[1]";
 
-    public AddActivationSettingsPage clickActivationSettingsButton() {
+    public AddActivationSettingsPage clickActivationSettingsButton() throws InterruptedException {
+        Thread.sleep(2000);
         waitForElementClickable(getElementBy(activationSettingsButton));
         getElement(activationSettingsButton).click();
         return this;

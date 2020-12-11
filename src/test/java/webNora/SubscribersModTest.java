@@ -68,20 +68,20 @@ public class SubscribersModTest {
         Thread.sleep(2000);
     }
 
-    @Test(dependsOnMethods = "notesSubscriber", alwaysRun = true)
+    @Test(dependsOnMethods = "notesSubscriber", alwaysRun = true, skipFailedInvocations = true)
     public void noraWebTest() throws AWTException, InterruptedException {
         noraGoWebHelper.openWebNoraGo()
                 .loginNorGo();
         Thread.sleep(2000);
     }
 
-    @Test(dependsOnMethods = "noraWebTest")
+    @Test(dependsOnMethods = "noraWebTest", skipFailedInvocations = true)
     public void addProfilesWeb() throws InterruptedException {
         addProfilesHelper.addNewProfiles();
         Thread.sleep(2000);
     }
 
-    @Test(dependsOnMethods = "addProfilesWeb")
+    @Test(dependsOnMethods = "addProfilesWeb", alwaysRun = true)
     public void backToAdminPanel() throws InterruptedException {
         closeNoraGoHelper.backAdminPanel();
         Thread.sleep(2000);
