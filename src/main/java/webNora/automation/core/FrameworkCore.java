@@ -37,8 +37,6 @@ public class FrameworkCore {
             options.setExperimentalOption("localState", chromeLocalStatePrefs);
             options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
             options.setExperimentalOption("useAutomationExtension", false);
-            options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
-            options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
             try {
                 webDriver = new RemoteWebDriver(url, options);
             } catch (Exception e) {

@@ -56,8 +56,6 @@ public class STBSettingsPage extends AbstractPage {
     }
 
     public STBSettingsPage selectColorApp() throws InterruptedException {
-        getElement(colorButton).click();
-        getElement(colorField).sendKeys("370b0b");
         sleep1000();
         jsScroll();
         return this;
