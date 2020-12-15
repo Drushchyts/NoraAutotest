@@ -2,19 +2,15 @@ package webNora.pages;
 
 import org.aspectj.util.FileUtil;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.RemoteWebElement;
-import webNora.automation.core.FrameworkCore;
-import webNora.automation.core.utils.PauseLenght;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import webNora.automation.core.FrameworkCore;
+import webNora.automation.core.utils.PauseLenght;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +24,15 @@ public class AbstractPage extends FrameworkCore {
     private String submit = "//button[contains(text(),'Sign in')]";
     private String checker = "//div[@class='alert alert-success alert-dismissable']";
 
-    private static WebDriver driver = getInstance();
+    private static WebDriver driver;
+
+    static {
+        try {
+            driver = getInstance();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public void navigateAdmin() {

@@ -2,6 +2,7 @@ package webNora.helpers;
 
 import webNora.pages.AbstractPage;
 
+import java.net.MalformedURLException;
 import java.util.Random;
 
 public class AbstractHelper {

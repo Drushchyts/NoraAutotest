@@ -1,28 +1,27 @@
 package webNora;
 
 
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-import webNora.automation.core.utils.IOUtils;
-import webNora.helpers.AbstractHelper;
-import webNora.helpers.packageHelpers.AddPackageHelper;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class Hello {
 
-    AddPackageHelper addPackageHelper = new AddPackageHelper();
-    AbstractHelper abstractHelper = new AbstractHelper();
-    private String username;
-    private String password;
+    public static void main(String[] args) throws MalformedURLException {
+        DesiredCapabilities dc = DesiredCapabilities.chrome();
 
-    @BeforeClass
-    public void setUp() {
-        System.out.println("TEST=====PackagesModTest=====START");
-        username = IOUtils.loadGenericProperties("username", "configuration");
-        password = IOUtils.loadGenericProperties("password", "configuration");
-        abstractHelper.openAdminPage();
-        abstractHelper.loginAdmin(username, password);
+        URL url = new URL("http://localhost:4444/wd/hub");
+
+        RemoteWebDriver driver = new RemoteWebDriver(url, dc);
+
+        driver.get("https://google.com");
+
+        System.out.println("Title od the page: " + driver.getTitle());
+
+        driver.quit();
     }
-
 
 }
