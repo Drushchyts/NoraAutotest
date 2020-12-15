@@ -30,12 +30,12 @@ public class PackagesModTest extends FrameworkCore {
 
     @BeforeClass
     public void setUp() {
-        System.out.println("TEST=====PackagesModTest=====START");
+        LOG.info("TEST=====PackagesModTest=====START");
         username = IOUtils.loadGenericProperties("username", "configuration");
         password = IOUtils.loadGenericProperties("password", "configuration");
         abstractHelper.openAdminPage();
         abstractHelper.loginAdmin(username, password);
-        LOG.info("dasdasd");
+
     }
 
     @Test
@@ -43,6 +43,7 @@ public class PackagesModTest extends FrameworkCore {
         addPackageHelper.clickPackageButton()
                 .createPackage();
         Thread.sleep(2000);
+        LOG.info("Create package success");
     }
 
     @Test(dependsOnMethods = "createPackage", skipFailedInvocations = true)
@@ -53,6 +54,7 @@ public class PackagesModTest extends FrameworkCore {
                 .currencyConverters()
                 .generalSettings();
         Thread.sleep(2000);
+        LOG.info("Activation settings package success");
     }
 
     @Test(dependsOnMethods = "activationSettings")
@@ -60,6 +62,7 @@ public class PackagesModTest extends FrameworkCore {
         contentSetsHelper.clickContentsSetsButton();
 //                .addContentSet();
         Thread.sleep(2000);
+        LOG.info("Add Content sets package success");
     }
 
     @Test(dependsOnMethods = "contentSets")
@@ -67,16 +70,21 @@ public class PackagesModTest extends FrameworkCore {
         addCouponsHelper.clickCouponsButton()
                 .addCoupons();
         Thread.sleep(2000);
+        LOG.info("Add Coupons package success");
     }
 
     @Test(dependsOnMethods = "coupons", skipFailedInvocations = true)
     public void stbSettings() throws InterruptedException {
         stbSettingsHelper.addStbSettings();
+        Thread.sleep(2000);
+        LOG.info("Add Sbt Settings package success");
     }
 
     @Test(dependsOnMethods = "stbSettings", skipFailedInvocations = true)
-    public void stbChannelList() {
+    public void stbChannelList() throws InterruptedException {
         stbChannelListHelper.clickSTBChannelList();
+        Thread.sleep(2000);
+        LOG.info("Add Stb Channel list package success");
     }
 
     @Test(dependsOnMethods = "stbChannelList", skipFailedInvocations = true)
@@ -85,18 +93,20 @@ public class PackagesModTest extends FrameworkCore {
                 .addReminder()
                 .activationTOA();
         Thread.sleep(2000);
+        LOG.info("Add Announcements and Reminders package success");
     }
 
     @Test(dependsOnMethods = "announcementsAndReminders")
     public void deletePackage() throws InterruptedException {
         addPackageHelper.clickPackageButton();
         deletePackageHelper.deletePackage();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
+        LOG.info("Delete package success");
     }
 
     @AfterClass
     public void tearDown() {
-        System.out.println("TEST=====PackagesModTest=====FINISH");
+        LOG.info("TEST=====PackagesModTest=====FINISH");
     }
 
 }

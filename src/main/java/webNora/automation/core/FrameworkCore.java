@@ -34,6 +34,9 @@ public class FrameworkCore {
             options.setCapability("browserName", "chrome");
             options.setCapability("acceptSslCerts", "true");
             options.setCapability("javascriptEnabled", "true");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
+            options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
             options.merge(dc);
 
             try {
@@ -59,7 +62,6 @@ public class FrameworkCore {
 
         } else if (browser.equals(BrowserConstants.LOCAL)) {
             ChromeOptions options = new ChromeOptions();
-
             HashMap<String, Object> chromeLocalStatePrefs = new HashMap<>();
             List<String> experimentalFlags = new ArrayList<>();
             experimentalFlags.add("same-site-by-default-cookies@2");
