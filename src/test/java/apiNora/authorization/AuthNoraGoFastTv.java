@@ -4,18 +4,20 @@ import apiNora.AbstractApi;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import org.testng.log4testng.Logger;
+import webNora.PackagesModTest;
 
 public class AuthNoraGoFastTv extends AbstractApi {
 
     private static RequestSpecification httpRequest;
+    private static final org.apache.log4j.Logger LOG = Logger.getLogger(AuthNoraGoFastTv.class);
 
 
     @BeforeClass
     public void starUp() {
-        System.out.println("TEST=====AuthNoraGoFastTv=====START");
+        LOG.info("TEST=====AuthNoraGoFastTv=====START");
         startTimeClass = System.currentTimeMillis();
     }
 
@@ -40,8 +42,8 @@ public class AuthNoraGoFastTv extends AbstractApi {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("Time for request authNoraGoTvTest: " + (System.currentTimeMillis() - startTime) + " ms");
-        System.out.println("TEST=====AuthNoraGoFastTv=====FINISH");
+        LOG.info("Time for request authNoraGoTvTest: " + (System.currentTimeMillis() - startTime) + " ms");
+        LOG.info("TEST=====AuthNoraGoFastTv=====FINISH");
     }
 
 }

@@ -19,7 +19,7 @@ public class AuthNoraGoTv extends AbstractApi {
 
     @BeforeClass
     public void starClass() {
-        System.out.println("TEST=====AuthNoraGoTv=====START");
+        LOG.info("TEST=====AuthNoraGoTv=====START");
         startTimeClass = System.currentTimeMillis();
 
     }
@@ -45,8 +45,8 @@ public class AuthNoraGoTv extends AbstractApi {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("Time for request AuthNoraGoTv: "+(System.currentTimeMillis()-startTime)+" ms");
-        System.out.println("TEST=====AuthNoraGoTv=====FINISH");
+        LOG.info("Time for request AuthNoraGoTv: " + (System.currentTimeMillis() - startTime) + " ms");
+        LOG.info("TEST=====AuthNoraGoTv=====FINISH");
     }
 
 }

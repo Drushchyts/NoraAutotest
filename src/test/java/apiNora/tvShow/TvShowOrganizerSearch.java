@@ -2,9 +2,11 @@ package apiNora.tvShow;
 
 import apiNora.AbstractApi;
 import apiNora.RequestBody;
+import apiNora.packages.CreateAndDeletePackageApi;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,10 +16,11 @@ public class TvShowOrganizerSearch extends AbstractApi {
 
     private static RequestSpecification httpRequest;
     RequestBody requestBody = new RequestBody();
+    private static final org.apache.log4j.Logger LOG = Logger.getLogger(TvShowOrganizerSearch.class);
 
     @BeforeClass
     public void starUp() {
-        System.out.println("TEST=====TvShowOrganizerSearch=====START");
+        LOG.info("TEST=====TvShowOrganizerSearch=====START");
         startTimeClass = System.currentTimeMillis();
 
     }
@@ -37,7 +40,7 @@ public class TvShowOrganizerSearch extends AbstractApi {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("Time for request tvShowOrganizer: " + (System.currentTimeMillis() - startTime) + " ms");
-        System.out.println("TEST=====TvShowOrganizerSearch=====FINISH");
+        LOG.info("Time for request tvShowOrganizer: " + (System.currentTimeMillis() - startTime) + " ms");
+        LOG.info("TEST=====TvShowOrganizerSearch=====FINISH");
     }
 }

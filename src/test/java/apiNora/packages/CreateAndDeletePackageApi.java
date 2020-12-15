@@ -2,10 +2,12 @@ package apiNora.packages;
 
 import apiNora.AbstractApi;
 import apiNora.RequestBody;
+import apiNora.authorization.AuthNoraGoFastTv;
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,14 +16,14 @@ import org.testng.annotations.Test;
 
 public class CreateAndDeletePackageApi extends AbstractApi {
 
+    private static final org.apache.log4j.Logger LOG = Logger.getLogger(CreateAndDeletePackageApi.class);
     RequestBody requestBody = new RequestBody();
     private String idPackage;
-    private String lastOne;
     private static RequestSpecification httpRequest;
 
     @BeforeClass
     public void starUp() {
-        System.out.println("TEST=====CreateAndDeletePackageApi=====START");
+        LOG.info("TEST=====CreateAndDeletePackageApi=====START");
         startTimeClass = System.currentTimeMillis();
 
     }
@@ -62,8 +64,8 @@ public class CreateAndDeletePackageApi extends AbstractApi {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("Time for request CreateAndDeletePackageApi: " + (System.currentTimeMillis() - startTime) + " ms");
-        System.out.println("TEST=====CreateAndDeletePackageApi=====FINISH");
+        LOG.info("Time for request CreateAndDeletePackageApi: " + (System.currentTimeMillis() - startTime) + " ms");
+        LOG.info("TEST=====CreateAndDeletePackageApi=====FINISH");
     }
 
 }

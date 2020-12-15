@@ -2,9 +2,11 @@ package apiNora.subscribers;
 
 import apiNora.AbstractApi;
 import apiNora.RequestBody;
+import apiNora.packages.CreateAndDeletePackageApi;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.specification.RequestSpecification;
+import org.apache.log4j.Logger;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -13,10 +15,12 @@ public class CreateSubscriberApi extends AbstractApi {
 
     private static RequestSpecification httpRequest;
     RequestBody requestBody = new RequestBody();
+    private static final org.apache.log4j.Logger LOG = Logger.getLogger(CreateSubscriberApi.class);
+
 
     @BeforeClass
     public void starUp() {
-        System.out.println("TEST=====CreateSubscriberApi=====START");
+        LOG.info("TEST=====CreateSubscriberApi=====START");
         startTimeClass = System.currentTimeMillis();
 
     }
@@ -37,8 +41,8 @@ public class CreateSubscriberApi extends AbstractApi {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("Time for request createSubscriberApi: " + (System.currentTimeMillis() - startTime) + " ms");
-        System.out.println("TEST=====CreateSubscriberApi=====FINISH");
+        LOG.info("Time for request createSubscriberApi: " + (System.currentTimeMillis() - startTime) + " ms");
+        LOG.info("TEST=====CreateSubscriberApi=====FINISH");
     }
 
 }
