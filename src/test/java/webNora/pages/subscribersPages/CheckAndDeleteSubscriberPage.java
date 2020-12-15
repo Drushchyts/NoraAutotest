@@ -31,6 +31,7 @@ public class CheckAndDeleteSubscriberPage extends AbstractPage {
     public CheckAndDeleteSubscriberPage deleteSubscriber() {
         jsScroll();
         jsScroll();
+        waitForElementClickable(getElementBy(removeButton));
         getElement(removeButton).click();
         waitForElementClickable(getElementBy(agreeDeleteSubscriberButton));
         getElement(agreeDeleteSubscriberButton).click();
