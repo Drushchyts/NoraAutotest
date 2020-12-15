@@ -1,5 +1,6 @@
 package webNora;
 
+import org.apache.log4j.Logger;
 import webNora.helpers.noraGoHelpers.AddProfilesHelper;
 import webNora.helpers.noraGoHelpers.CloseNoraGoHelper;
 import webNora.helpers.noraGoHelpers.NoraGoWebHelper;
@@ -9,10 +10,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.awt.*;
-import java.util.logging.Logger;
 
 public class SubscribersModTest {
 
+    private static final org.apache.log4j.Logger LOG = Logger.getLogger(SubscribersModTest.class);
 
     AddSubscriberHelper addSubscriberHelper = new AddSubscriberHelper();
     AddDeviceHelper addDeviceHelper = new AddDeviceHelper();
@@ -27,7 +28,7 @@ public class SubscribersModTest {
 
     @BeforeClass
     public void startUp() {
-        System.out.println("TEST=====SubscribersModTest=====START");
+        LOG.info("TEST=====SubscribersModTest=====START");
     }
 
 
@@ -35,6 +36,7 @@ public class SubscribersModTest {
     public void subscribersTest() throws InterruptedException {
         addSubscriberHelper.clickSubscriberButton().createSubscriber();
         Thread.sleep(2000);
+        LOG.info("Create subscriber success");
 
     }
 
@@ -42,30 +44,35 @@ public class SubscribersModTest {
     public void addDeviceSubscriberTest() throws InterruptedException {
         addDeviceHelper.addDevice();
         Thread.sleep(2000);
+        LOG.info("Add Device Subscriber success");
     }
 
     @Test(dependsOnMethods = "addDeviceSubscriberTest", alwaysRun = true)
     public void activationSubscriber() throws InterruptedException {
         activationHelper.activationSubscriber();
         Thread.sleep(2000);
+        LOG.info("Activation Subscriber success");
     }
 
     @Test(dependsOnMethods = "activationSubscriber", alwaysRun = true)
     public void deleteDeviceSubscriber() throws InterruptedException {
         deleteDeviceHelper.deleteDevice();
         Thread.sleep(2000);
+        LOG.info("Delete Device Subscriber success");
     }
 
     @Test(dependsOnMethods = "deleteDeviceSubscriber")
     public void customerStreamsSubscriber() throws InterruptedException {
         customStreamsHelper.checkCustomerPage();
         Thread.sleep(2000);
+        LOG.info("Customer Stream Subscriber success");
     }
 
     @Test(dependsOnMethods = "customerStreamsSubscriber")
     public void notesSubscriber() throws InterruptedException {
         notesHelper.checkNotesPage();
         Thread.sleep(2000);
+        LOG.info("Notes Subscriber success");
     }
 
     @Test(dependsOnMethods = "notesSubscriber", alwaysRun = true, skipFailedInvocations = true)
@@ -73,18 +80,21 @@ public class SubscribersModTest {
         noraGoWebHelper.openWebNoraGo()
                 .loginNorGo();
         Thread.sleep(2000);
+        LOG.info("Nora Web Test success");
     }
 
     @Test(dependsOnMethods = "noraWebTest", skipFailedInvocations = true)
     public void addProfilesWeb() throws InterruptedException {
         addProfilesHelper.addNewProfiles();
         Thread.sleep(2000);
+        LOG.info("Nora Web Add Profiles success");
     }
 
     @Test(dependsOnMethods = "addProfilesWeb", alwaysRun = true)
     public void backToAdminPanel() throws InterruptedException {
         closeNoraGoHelper.backAdminPanel();
         Thread.sleep(2000);
+        LOG.info("Back Admin panel success");
     }
 
 
@@ -93,12 +103,12 @@ public class SubscribersModTest {
         addSubscriberHelper.clickSubscriberButton();
         checkAndDeleteSubscriberHelper.deleteSubscriber();
         Thread.sleep(2000);
+        LOG.info("Check And Delete Subscriber success");
     }
 
     @AfterClass
     public void tearDown() {
-        System.out.println("TEST=====SubscribersModTest=====FINISH");
-//        addSubscriberHelper.close();
+        LOG.info("TEST=====SubscribersModTest=====FINISH");
     }
 
 }
