@@ -73,21 +73,21 @@ public class PackagesModTest extends FrameworkCore {
         LOG.info("Add Coupons package success");
     }
 
-    @Test(dependsOnMethods = "coupons", skipFailedInvocations = true)
+    @Test(dependsOnMethods = "coupons", skipFailedInvocations = true, alwaysRun = true)
     public void stbSettings() throws InterruptedException {
         stbSettingsHelper.addStbSettings();
         Thread.sleep(2000);
         LOG.info("Add Sbt Settings package success");
     }
 
-    @Test(dependsOnMethods = "stbSettings", skipFailedInvocations = true)
+    @Test(dependsOnMethods = "stbSettings", skipFailedInvocations = true, alwaysRun = true)
     public void stbChannelList() throws InterruptedException {
         stbChannelListHelper.clickSTBChannelList();
         Thread.sleep(2000);
         LOG.info("Add Stb Channel list package success");
     }
 
-    @Test(dependsOnMethods = "stbChannelList", skipFailedInvocations = true)
+    @Test(dependsOnMethods = "stbChannelList", skipFailedInvocations = true, alwaysRun = true)
     public void announcementsAndReminders() throws InterruptedException {
         annAndRemindersHelper.addAnnouncement()
                 .addReminder()
@@ -96,7 +96,7 @@ public class PackagesModTest extends FrameworkCore {
         LOG.info("Add Announcements and Reminders package success");
     }
 
-    @Test(dependsOnMethods = "announcementsAndReminders")
+    @Test(dependsOnMethods = "announcementsAndReminders", skipFailedInvocations = true, alwaysRun = true)
     public void deletePackage() throws InterruptedException {
         addPackageHelper.clickPackageButton();
         deletePackageHelper.deletePackage();
