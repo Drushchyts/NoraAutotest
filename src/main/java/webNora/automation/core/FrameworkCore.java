@@ -29,24 +29,16 @@ public class FrameworkCore {
         if (browser.equals(BrowserConstants.CHROMIUM)) {
             URL url = new URL("http://localhost:4444/wd/hub");
             ChromeOptions options = new ChromeOptions();
-            options.setCapability(ChromeOptions.CAPABILITY, options);
-            DesiredCapabilities dc = DesiredCapabilities.chrome();
-            options.setCapability("browserName", "chrome");
-            options.setCapability("acceptSslCerts", "true");
-            options.setCapability("javascriptEnabled", "true");
             HashMap<String, Object> chromeLocalStatePrefs = new HashMap<>();
             List<String> experimentalFlags = new ArrayList<>();
             experimentalFlags.add("same-site-by-default-cookies@2");
             experimentalFlags.add("cookies-without-same-site-must-be-secure@2");
             chromeLocalStatePrefs.put("browser.enabled_labs_experiments", experimentalFlags);
             options.setExperimentalOption("localState", chromeLocalStatePrefs);
-            options.addArguments("--no-sandbox");
             options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
             options.setExperimentalOption("useAutomationExtension", false);
             options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
             options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
-            options.merge(dc);
-
             try {
                 webDriver = new RemoteWebDriver(url, options);
             } catch (Exception e) {
