@@ -1,5 +1,7 @@
 package webNora;
 
+import apiNora.subscribers.CreateSubscriberApi;
+import org.apache.log4j.Logger;
 import webNora.helpers.tvChannelsHelpers.AddTvChannelsHelper;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -8,13 +10,13 @@ import webNora.helpers.tvChannelsHelpers.DeleteTvChannelHelper;
 
 public class TvChannelsModTest {
 
-
+    private static final Logger LOG = Logger.getLogger(TvChannelsModTest.class);
     AddTvChannelsHelper addTvChannelsHelper = new AddTvChannelsHelper();
     DeleteTvChannelHelper deleteTvChannelHelper = new DeleteTvChannelHelper();
 
     @BeforeClass
     public void startUp() {
-        System.out.println("TEST=====TvChannelsModTest=====START");
+        LOG.info("TEST=====TvChannelsModTest=====START");
     }
 
     @Test
@@ -34,6 +36,6 @@ public class TvChannelsModTest {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("TEST=====TvChannelsModTest=====FINISH");
+        LOG.info("TEST=====TvChannelsModTest=====FINISH");
     }
 }

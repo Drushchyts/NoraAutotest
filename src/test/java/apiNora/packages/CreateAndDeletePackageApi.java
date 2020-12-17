@@ -2,7 +2,6 @@ package apiNora.packages;
 
 import apiNora.AbstractApi;
 import apiNora.RequestBody;
-import apiNora.authorization.AuthNoraGoFastTv;
 import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.http.Method;
@@ -42,7 +41,6 @@ public class CreateAndDeletePackageApi extends AbstractApi {
         String urlForDelete = headers.getValue("Location");
         String[] parts = urlForDelete.split("/");
         idPackage = parts[parts .length-1];
-        System.out.print("Package create id: " + idPackage);
         Assert.assertEquals(201, response.getStatusCode());
     }
 
@@ -57,7 +55,6 @@ public class CreateAndDeletePackageApi extends AbstractApi {
         io.restassured.response.Response response = httpRequest.request(Method.DELETE);
         String responseBody = response.body().asString();
         bodyInfo(responseBody);
-        System.out.println("Package delete id: " + idPackage);
         Assert.assertEquals(200, response.getStatusCode());
     }
 

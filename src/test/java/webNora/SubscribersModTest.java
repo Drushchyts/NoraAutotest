@@ -13,8 +13,7 @@ import java.awt.*;
 
 public class SubscribersModTest {
 
-    private static final org.apache.log4j.Logger LOG = Logger.getLogger(SubscribersModTest.class);
-
+    private static final Logger LOG = Logger.getLogger(SubscribersModTest.class);
     AddSubscriberHelper addSubscriberHelper = new AddSubscriberHelper();
     AddDeviceHelper addDeviceHelper = new AddDeviceHelper();
     ActivationHelper activationHelper = new ActivationHelper();

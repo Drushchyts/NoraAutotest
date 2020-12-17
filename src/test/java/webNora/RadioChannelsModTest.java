@@ -1,5 +1,6 @@
 package webNora;
 
+import org.apache.log4j.Logger;
 import webNora.helpers.radioHelpers.AddRadioHelper;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -7,11 +8,12 @@ import org.testng.annotations.Test;
 
 public class RadioChannelsModTest {
 
+    private static final Logger LOG = Logger.getLogger(RadioChannelsModTest.class);
     AddRadioHelper addRadioHelper = new AddRadioHelper();
 
     @BeforeClass
     public void startUp() {
-        System.out.println("TEST=====RadioChannelsModTest=====START");
+        LOG.info("TEST=====RadioChannelsModTest=====START");
     }
 
 
@@ -23,7 +25,6 @@ public class RadioChannelsModTest {
 
     @AfterClass
     public void tearDown() {
-        System.out.println("TEST=====RadioChannelsModTest=====FINISH");
-//        addRadioHelper.close();
+        LOG.info("TEST=====RadioChannelsModTest=====FINISH");
     }
 }

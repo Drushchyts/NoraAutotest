@@ -7,7 +7,7 @@ public class CheckAndDeleteUserHelper extends AbstractHelper {
 
     CheckAndDeleteUserPage checkAndDeleteUserPage = new CheckAndDeleteUserPage();
 
-    public CheckAndDeleteUserHelper verifyCreated() {
+    public CheckAndDeleteUserHelper verifyCreated() throws InterruptedException {
         checkAndDeleteUserPage.enterNameForSearch()
                 .checkUser();
         return this;

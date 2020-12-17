@@ -12,7 +12,8 @@ public class CheckAndDeleteUserPage extends AbstractPage {
     private String deleteButton = "//tbody/tr[1]/td[4]/div[1]/button[1]";
     private String agreeButton = "//button[contains(text(),'Yes')]";
 
-    public CheckAndDeleteUserPage enterNameForSearch() {
+    public CheckAndDeleteUserPage enterNameForSearch() throws InterruptedException {
+        Thread.sleep(2000);
         waitForElementVisible(getElementBy(searchField));
         getElement(searchField).sendKeys(nameUser);
         return this;
@@ -26,7 +27,7 @@ public class CheckAndDeleteUserPage extends AbstractPage {
     }
 
     public CheckAndDeleteUserPage deleteExternalUser() throws InterruptedException {
-        sleep(2000);
+        sleep(3000);
         waitForElementClickable(getElementBy(deleteButton));
         getElement(deleteButton).click();
         waitForElementClickable(getElementBy(agreeButton));
