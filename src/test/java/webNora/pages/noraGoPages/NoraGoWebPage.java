@@ -1,9 +1,6 @@
 package webNora.pages.noraGoPages;
 
-import org.openqa.selenium.WebElement;
 import webNora.pages.AbstractPage;
-
-import java.awt.*;
 
 public class NoraGoWebPage extends AbstractPage {
 
@@ -14,7 +11,7 @@ public class NoraGoWebPage extends AbstractPage {
     private String password = "Aleksandr123";
     private String text = "//button[contains(text(),'SETTINGS')]";
 
-    public NoraGoWebPage openNoraGo() throws AWTException {
+    public NoraGoWebPage openNoraGo() {
         openNewWindow();
         openNewTab();
         navigateNoraGo();

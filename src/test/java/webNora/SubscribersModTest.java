@@ -3,6 +3,7 @@ package webNora;
 import org.apache.log4j.Logger;
 import webNora.helpers.noraGoHelpers.AddProfilesHelper;
 import webNora.helpers.noraGoHelpers.CloseNoraGoHelper;
+import webNora.helpers.noraGoHelpers.LogOutNoraGoHelper;
 import webNora.helpers.noraGoHelpers.NoraGoWebHelper;
 import webNora.helpers.subscribersHelpers.*;
 import org.testng.annotations.AfterClass;
@@ -24,6 +25,7 @@ public class SubscribersModTest {
     NoraGoWebHelper noraGoWebHelper = new NoraGoWebHelper();
     AddProfilesHelper addProfilesHelper = new AddProfilesHelper();
     CloseNoraGoHelper closeNoraGoHelper = new CloseNoraGoHelper();
+    LogOutNoraGoHelper logOutNoraGoHelper = new LogOutNoraGoHelper();
 
     @BeforeClass
     public void startUp() {
@@ -89,7 +91,14 @@ public class SubscribersModTest {
         LOG.info("Nora Web Add Profiles success");
     }
 
-    @Test(dependsOnMethods = "addProfilesWeb", alwaysRun = true)
+    @Test(dependsOnMethods = "addProfilesWeb", skipFailedInvocations = true)
+    public void logUotNora() throws InterruptedException {
+        logOutNoraGoHelper.logOutNoraWeb();
+        Thread.sleep(2000);
+        LOG.info("LogOut Nora Web success");
+    }
+
+    @Test(dependsOnMethods = "logUotNora", alwaysRun = true)
     public void backToAdminPanel() throws InterruptedException {
         closeNoraGoHelper.backAdminPanel();
         Thread.sleep(2000);
