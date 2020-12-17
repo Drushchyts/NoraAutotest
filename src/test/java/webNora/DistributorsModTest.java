@@ -42,6 +42,6 @@ public class DistributorsModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====DistributorsModTest=====FINISH");
+        LOG.info("TEST=====DistributorsModTest=====FINISH\n");
     }
 }

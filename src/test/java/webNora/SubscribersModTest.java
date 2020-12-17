@@ -107,7 +107,7 @@ public class SubscribersModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====SubscribersModTest=====FINISH");
+        LOG.info("TEST=====SubscribersModTest=====FINISH\n");
     }
 
 }

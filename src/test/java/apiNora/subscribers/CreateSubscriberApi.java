@@ -42,7 +42,7 @@ public class CreateSubscriberApi extends AbstractApi {
     @AfterClass
     public void tearDown() {
         LOG.info("Time for request createSubscriberApi: " + (System.currentTimeMillis() - startTime) + " ms");
-        LOG.info("TEST=====CreateSubscriberApi=====FINISH");
+        LOG.info("TEST=====CreateSubscriberApi=====FINISH\n");
     }
 
 }

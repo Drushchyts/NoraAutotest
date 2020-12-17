@@ -24,7 +24,6 @@ public class CreateAndDeletePackageApi extends AbstractApi {
     public void starUp() {
         LOG.info("TEST=====CreateAndDeletePackageApi=====START");
         startTimeClass = System.currentTimeMillis();
-
     }
 
     @Test
@@ -53,8 +52,8 @@ public class CreateAndDeletePackageApi extends AbstractApi {
                 .header("accept", "application/json, text/plain, */*")
                 .header("cookie", "XSRF-TOKEN=ed200cbe-e1a6-4c26-8f5f-ab18bc1139e0;JSESSIONID=" + authNora());
         io.restassured.response.Response response = httpRequest.request(Method.DELETE);
-        String responseBody = response.body().asString();
-        bodyInfo(responseBody);
+//        String responseBody = response.body().asString();
+//        bodyInfo(responseBody);
         Assert.assertEquals(200, response.getStatusCode());
     }
 
@@ -62,7 +61,7 @@ public class CreateAndDeletePackageApi extends AbstractApi {
     @AfterClass
     public void tearDown() {
         LOG.info("Time for request CreateAndDeletePackageApi: " + (System.currentTimeMillis() - startTime) + " ms");
-        LOG.info("TEST=====CreateAndDeletePackageApi=====FINISH");
+        LOG.info("TEST=====CreateAndDeletePackageApi=====FINISH\n");
     }
 
 }

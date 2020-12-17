@@ -57,6 +57,6 @@ public class SettingsModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====SettingsModTest=====FINISH");
+        LOG.info("TEST=====SettingsModTest=====FINISH\n");
     }
 }

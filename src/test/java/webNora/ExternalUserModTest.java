@@ -44,6 +44,6 @@ public class ExternalUserModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====ExternalUserModTest=====FINISH");
+        LOG.info("TEST=====ExternalUserModTest=====FINISH\n");
     }
 }

@@ -44,6 +44,6 @@ public class DevicesModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====DevicesModTest=====FINISH");
+        LOG.info("TEST=====DevicesModTest=====FINISH\n");
     }
 }

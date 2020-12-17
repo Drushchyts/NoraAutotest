@@ -31,6 +31,6 @@ public class InfoModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====InfoModTest=====FINISH");
+        LOG.info("TEST=====InfoModTest=====FINISH\n");
     }
 }

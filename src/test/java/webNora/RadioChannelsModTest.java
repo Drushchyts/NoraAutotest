@@ -26,6 +26,6 @@ public class RadioChannelsModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====RadioChannelsModTest=====FINISH");
+        LOG.info("TEST=====RadioChannelsModTest=====FINISH\n");
     }
 }

@@ -43,6 +43,6 @@ public class UsersModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====UsersModTest=====FINISH");
+        LOG.info("TEST=====UsersModTest=====FINISH\n");
     }
 }

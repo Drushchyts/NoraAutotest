@@ -38,6 +38,6 @@ public class TvChannelsModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====TvChannelsModTest=====FINISH");
+        LOG.info("TEST=====TvChannelsModTest=====FINISH\n");
     }
 }

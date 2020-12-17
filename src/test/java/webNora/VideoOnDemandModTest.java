@@ -39,6 +39,6 @@ public class VideoOnDemandModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====VideoOnDemandModTest=====FINISH");
+        LOG.info("TEST=====VideoOnDemandModTest=====FINISH\n");
     }
 }

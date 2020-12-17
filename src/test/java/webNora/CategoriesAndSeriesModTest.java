@@ -97,6 +97,6 @@ public class CategoriesAndSeriesModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====CategoriesAndSeriesModTest=====FINISH");
+        LOG.info("TEST=====CategoriesAndSeriesModTest=====FINISH\n");
     }
 }

@@ -57,7 +57,7 @@ public class ReportsModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====ReportsModTest=====FINISH");
+        LOG.info("TEST=====ReportsModTest=====FINISH\n");
         addReportsHelper.close();
     }
 }

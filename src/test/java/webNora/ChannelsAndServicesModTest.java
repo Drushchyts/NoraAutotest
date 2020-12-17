@@ -44,6 +44,6 @@ public class ChannelsAndServicesModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====ChannelsAndServicesModTest=====FINISH");
+        LOG.info("TEST=====ChannelsAndServicesModTest=====FINISH\n");
     }
 }

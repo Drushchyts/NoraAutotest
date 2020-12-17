@@ -46,7 +46,7 @@ public class AuthNoraGoTv extends AbstractApi {
     @AfterClass
     public void tearDown() {
         LOG.info("Time for request AuthNoraGoTv: " + (System.currentTimeMillis() - startTime) + " ms");
-        LOG.info("TEST=====AuthNoraGoTv=====FINISH");
+        LOG.info("TEST=====AuthNoraGoTv=====FINISH\n");
     }
 
 }

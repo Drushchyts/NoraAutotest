@@ -42,6 +42,6 @@ public class DrmServiceModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====DrmServiceModTest=====FINISH");
+        LOG.info("TEST=====DrmServiceModTest=====FINISH\n");
     }
 }

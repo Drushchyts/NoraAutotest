@@ -25,7 +25,7 @@ public class GeoBlockModTest {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====GeoBlockModTest=====FINISH");
+        LOG.info("TEST=====GeoBlockModTest=====FINISH\n");
     }
 
 }

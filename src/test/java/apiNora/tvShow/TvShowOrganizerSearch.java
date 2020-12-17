@@ -41,6 +41,6 @@ public class TvShowOrganizerSearch extends AbstractApi {
     @AfterClass
     public void tearDown() {
         LOG.info("Time for request tvShowOrganizer: " + (System.currentTimeMillis() - startTime) + " ms");
-        LOG.info("TEST=====TvShowOrganizerSearch=====FINISH");
+        LOG.info("TEST=====TvShowOrganizerSearch=====FINISH\n");
     }
 }

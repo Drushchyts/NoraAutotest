@@ -106,7 +106,7 @@ public class PackagesModTest extends FrameworkCore {
 
     @AfterClass
     public void tearDown() {
-        LOG.info("TEST=====PackagesModTest=====FINISH");
+        LOG.info("TEST=====PackagesModTest=====FINISH\n");
     }
 
 }
