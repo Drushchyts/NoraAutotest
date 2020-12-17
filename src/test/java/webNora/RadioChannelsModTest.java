@@ -21,6 +21,7 @@ public class RadioChannelsModTest {
     public void radioTest() throws InterruptedException {
         addRadioHelper.clickRadioButton();
         Thread.sleep(2000);
+        LOG.info("Click Radio Mod success");
     }
 
     @AfterClass

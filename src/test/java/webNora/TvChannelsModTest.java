@@ -1,11 +1,10 @@
 package webNora;
 
-import apiNora.subscribers.CreateSubscriberApi;
 import org.apache.log4j.Logger;
-import webNora.helpers.tvChannelsHelpers.AddTvChannelsHelper;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import webNora.helpers.tvChannelsHelpers.AddTvChannelsHelper;
 import webNora.helpers.tvChannelsHelpers.DeleteTvChannelHelper;
 
 public class TvChannelsModTest {
@@ -22,16 +21,19 @@ public class TvChannelsModTest {
     @Test
     public void tvChannelsTest() {
         addTvChannelsHelper.clickTvChannelsButton();
+        LOG.info("Click Tv Channel Mod success");
     }
 
     @Test(dependsOnMethods = "tvChannelsTest")
     public void addChannel() throws InterruptedException {
         addTvChannelsHelper.addChannel();
+        LOG.info("Add Channel success");
     }
 
     @Test(dependsOnMethods = "addChannel")
     public void deleteChannel() {
         deleteTvChannelHelper.deleteChannel();
+        LOG.info("Delete Channel success");
     }
 
     @AfterClass

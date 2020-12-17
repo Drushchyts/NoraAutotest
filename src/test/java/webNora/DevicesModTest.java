@@ -1,5 +1,6 @@
 package webNora;
 
+import org.apache.log4j.Logger;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import webNora.helpers.devicesHelpers.AddDevicesHelper;
@@ -9,37 +10,40 @@ import webNora.helpers.devicesHelpers.MultipleDeviceHelper;
 
 public class DevicesModTest {
 
+    private static final Logger LOG = Logger.getLogger(DevicesModTest.class);
     AddDevicesHelper addDevicesHelper = new AddDevicesHelper();
     DeviceHelper deviceHelper = new DeviceHelper();
     MultipleDeviceHelper multipleDeviceHelper = new MultipleDeviceHelper();
 
     @BeforeClass
     public void startUp() {
-        System.out.println("TEST=====DevicesModTest=====START");
+        LOG.info("TEST=====DevicesModTest=====START");
     }
 
     @Test
     public void devicesTest() throws InterruptedException {
         addDevicesHelper.clickDevicesButton();
         Thread.sleep(2000);
+        LOG.info("Click Device Mod success");
     }
 
     @Test(dependsOnMethods = "devicesTest")
     public void addDevicesTest() throws InterruptedException {
         deviceHelper.addDevice();
         Thread.sleep(2000);
+        LOG.info("Add Devices success");
     }
 
     @Test(dependsOnMethods = "addDevicesTest")
     public void addMultipleDevicesTest() throws InterruptedException {
         multipleDeviceHelper.addMultipleDevice();
         Thread.sleep(2000);
+        LOG.info("Add Multiple Device success");
     }
 
 
     @AfterClass
     public void tearDown() {
-        System.out.println("TEST=====DevicesModTest=====FINISH");
-//        addDevicesHelper.close();
+        LOG.info("TEST=====DevicesModTest=====FINISH");
     }
 }
