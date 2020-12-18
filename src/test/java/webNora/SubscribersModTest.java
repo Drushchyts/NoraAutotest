@@ -1,10 +1,7 @@
 package webNora;
 
 import org.apache.log4j.Logger;
-import webNora.helpers.noraGoHelpers.AddProfilesHelper;
-import webNora.helpers.noraGoHelpers.CloseNoraGoHelper;
-import webNora.helpers.noraGoHelpers.LogOutNoraGoHelper;
-import webNora.helpers.noraGoHelpers.NoraGoWebHelper;
+import webNora.helpers.noraGoHelpers.*;
 import webNora.helpers.subscribersHelpers.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -26,6 +23,8 @@ public class SubscribersModTest {
     AddProfilesHelper addProfilesHelper = new AddProfilesHelper();
     CloseNoraGoHelper closeNoraGoHelper = new CloseNoraGoHelper();
     LogOutNoraGoHelper logOutNoraGoHelper = new LogOutNoraGoHelper();
+    AppInfoHelper appInfoHelper = new AppInfoHelper();
+    TvNoraHelper tvNoraHelper = new TvNoraHelper();
 
     @BeforeClass
     public void startUp() {
@@ -81,7 +80,7 @@ public class SubscribersModTest {
         noraGoWebHelper.openWebNoraGo()
                 .loginNorGo();
         Thread.sleep(2000);
-        LOG.info("Nora Web Test success");
+        LOG.info("Nora Open Web Test success");
     }
 
     @Test(dependsOnMethods = "noraWebTest", skipFailedInvocations = true)
@@ -92,6 +91,21 @@ public class SubscribersModTest {
     }
 
     @Test(dependsOnMethods = "addProfilesWeb", skipFailedInvocations = true)
+    public void checkAppInfo() throws InterruptedException {
+        appInfoHelper.checkAppInfo();
+        Thread.sleep(2000);
+        LOG.info("Check App Info success");
+    }
+
+    @Test(dependsOnMethods = "checkAppInfo",skipFailedInvocations = true)
+    public void tvNoraTest() throws InterruptedException {
+        tvNoraHelper.checkTvNora();
+        Thread.sleep(2000);
+        LOG.info("Tv Nora Player success");
+    }
+    //----------------------------------------------------------------------------
+
+    @Test(dependsOnMethods = "tvNoraTest", skipFailedInvocations = true)
     public void logUotNora() throws InterruptedException {
         logOutNoraGoHelper.logOutNoraWeb();
         Thread.sleep(2000);
