@@ -123,13 +123,13 @@ public class SubscribersModTest {
     //----------------------------------------------------------------------------
 
     @Test(dependsOnMethods = "tvShowsNoraTest", skipFailedInvocations = true)
-    public void logUotNora() throws InterruptedException {
+    public void logOutNora() throws InterruptedException {
         logOutNoraGoHelper.logOutNoraWeb();
         Thread.sleep(2000);
         LOG.info("LogOut Nora Web success");
     }
 
-    @Test(dependsOnMethods = "logUotNora", alwaysRun = true)
+    @Test(dependsOnMethods = "logOutNora", alwaysRun = true)
     public void backToAdminPanel() throws InterruptedException {
         closeNoraGoHelper.backAdminPanel();
         Thread.sleep(2000);

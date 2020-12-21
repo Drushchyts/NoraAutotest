@@ -22,7 +22,8 @@ public class MoviesNoraPage extends AbstractPage {
         return this;
     }
 
-    public MoviesNoraPage checkMovies() {
+    public MoviesNoraPage checkMovies() throws InterruptedException {
+        sleep(2000);
         waitForElementVisible(getElementBy(movieField));
         WebElement element = getElement(movieField);
         Assert.assertTrue(element.isDisplayed(), "Movies not search");
