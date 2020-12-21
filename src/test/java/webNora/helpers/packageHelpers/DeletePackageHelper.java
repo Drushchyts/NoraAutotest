@@ -9,7 +9,7 @@ public class DeletePackageHelper extends AbstractHelper {
     DeletePackagePage deletePackagePage = new DeletePackagePage();
 
 
-    public DeletePackageHelper deletePackage() {
+    public DeletePackageHelper deletePackage() throws InterruptedException {
         deletePackagePage.enterNamePackage()
                 .checkPackage()
                 .deletePackage();
