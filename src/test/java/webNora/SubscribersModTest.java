@@ -25,6 +25,8 @@ public class SubscribersModTest {
     LogOutNoraGoHelper logOutNoraGoHelper = new LogOutNoraGoHelper();
     AppInfoHelper appInfoHelper = new AppInfoHelper();
     TvNoraHelper tvNoraHelper = new TvNoraHelper();
+    MoviesNoraHelper moviesNoraHelper = new MoviesNoraHelper();
+    TvShowsHelper tvShowsHelper = new TvShowsHelper();
 
     @BeforeClass
     public void startUp() {
@@ -97,15 +99,30 @@ public class SubscribersModTest {
         LOG.info("Check App Info success");
     }
 
-    @Test(dependsOnMethods = "checkAppInfo",skipFailedInvocations = true)
+    @Test(dependsOnMethods = "checkAppInfo", skipFailedInvocations = true)
     public void tvNoraTest() throws InterruptedException {
         tvNoraHelper.checkTvNora();
         Thread.sleep(2000);
         LOG.info("Tv Nora Player success");
     }
-    //----------------------------------------------------------------------------
 
     @Test(dependsOnMethods = "tvNoraTest", skipFailedInvocations = true)
+    public void moviesNoraTest() throws InterruptedException {
+        moviesNoraHelper.checkMoviesNora();
+        Thread.sleep(2000);
+        LOG.info("Search Movies Nora success");
+    }
+
+    @Test(dependsOnMethods = "moviesNoraTest", skipFailedInvocations = true)
+    public void tvShowsNoraTest() throws InterruptedException {
+        tvShowsHelper.TvShowsHelper();
+        Thread.sleep(2000);
+        LOG.info("Tv Shows Nora success");
+    }
+
+    //----------------------------------------------------------------------------
+
+    @Test(dependsOnMethods = "tvShowsNoraTest", skipFailedInvocations = true)
     public void logUotNora() throws InterruptedException {
         logOutNoraGoHelper.logOutNoraWeb();
         Thread.sleep(2000);

@@ -67,8 +67,8 @@ public class FrameworkCore {
             chromeLocalStatePrefs.put("browser.enabled_labs_experiments", experimentalFlags);
             options.setExperimentalOption("localState", chromeLocalStatePrefs);
             options.addArguments("--no-sandbox");
-            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-            options.setExperimentalOption("useAutomationExtension", false);
+//            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+//            options.setExperimentalOption("useAutomationExtension", false);
             webDriver = new ChromeDriver(options);
             webDriver.manage().window().maximize();
 
