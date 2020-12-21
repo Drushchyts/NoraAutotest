@@ -17,7 +17,8 @@ public class MoviesNoraPage extends AbstractPage {
         return this;
     }
 
-    public MoviesNoraPage enterSearchMovie() {
+    public MoviesNoraPage enterSearchMovie() throws InterruptedException {
+        sleep(2000);
         getElement(searchMovie).sendKeys("AWS" + Keys.ENTER);
         return this;
     }

@@ -20,7 +20,8 @@ public class DeletePackagePage extends AbstractPage {
         return this;
     }
 
-    public DeletePackagePage checkPackage() {
+    public DeletePackagePage checkPackage() throws InterruptedException {
+        sleep(2000);
         waitForElementVisible(getElementBy(namePackageField));
         WebElement element = getElement(namePackageField);
         Assert.assertEquals(namePackage, element.getText());
