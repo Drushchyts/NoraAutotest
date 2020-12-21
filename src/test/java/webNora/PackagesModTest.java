@@ -5,7 +5,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.apache.log4j.Logger;
 import webNora.automation.core.FrameworkCore;
-import webNora.automation.core.utils.IOUtils;
 import webNora.helpers.AbstractHelper;
 import webNora.helpers.packageHelpers.*;
 
@@ -24,17 +23,9 @@ public class PackagesModTest extends FrameworkCore {
     ContentSetsHelper contentSetsHelper = new ContentSetsHelper();
     DeletePackageHelper deletePackageHelper = new DeletePackageHelper();
 
-    private String username;
-    private String password;
-
-
     @BeforeClass
     public void setUp() {
         LOG.info("TEST=====PackagesModTest=====START");
-        username = IOUtils.loadGenericProperties("username", "configuration");
-        password = IOUtils.loadGenericProperties("password", "configuration");
-        abstractHelper.openAdminPage();
-        abstractHelper.loginAdmin(username, password);
 
     }
 

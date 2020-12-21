@@ -17,7 +17,8 @@ public class TvShowsPage extends AbstractPage {
         return this;
     }
 
-    public TvShowsPage enterSearchName() {
+    public TvShowsPage enterSearchName() throws InterruptedException {
+        sleep(2000);
         getElement(searchField).sendKeys("test" + Keys.ENTER);
         return this;
     }

@@ -4,17 +4,18 @@
     <listeners>
         <listener class-name="webNora.automation.core.common.AnnotationTransformer"/>
     </listeners>
-    <test verbose="2" name="Nora Api Test Suite">
-        <classes>
-            <class name="apiNora.authorization.AuthNoraGoTv"/>
-            <class name="apiNora.authorization.AuthNoraGoFastTv"/>
-            <class name="apiNora.packages.CreateAndDeletePackageApi"/>
-            <class name="apiNora.subscribers.CreateSubscriberApi"/>
-            <class name="apiNora.tvShow.TvShowOrganizerSearch"/>
-        </classes>
-    </test>
+        <test verbose="2" name="Nora Api Test Suite">
+            <classes>
+                <class name="apiNora.authorization.AuthNoraGoTv"/>
+                <class name="apiNora.authorization.AuthNoraGoFastTv"/>
+                <class name="apiNora.packages.CreateAndDeletePackageApi"/>
+                <class name="apiNora.subscribers.CreateSubscriberApi"/>
+                <class name="apiNora.tvShow.TvShowOrganizerSearch"/>
+            </classes>
+        </test>
     <test verbose="2" name="Nora Web Test Suite">
         <classes>
+            <class name="webNora.DashboardModTest"/>
             <class name="webNora.PackagesModTest"/>
             <class name="webNora.SubscribersModTest"/>
             <class name="webNora.TvChannelsModTest"/>
@@ -33,9 +34,8 @@
             <class name="webNora.ReportsModTest"/>
         </classes>
     </test>
-        <test verbose="2" name="Nora FrontView Test Suite">
-            <classes>
-
-            </classes>
-        </test>
+    <test verbose="2" name="Nora FrontView Test Suite">
+        <classes>
+        </classes>
+    </test>
 </suite>

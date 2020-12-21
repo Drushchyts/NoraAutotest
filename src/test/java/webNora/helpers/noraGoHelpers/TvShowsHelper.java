@@ -7,7 +7,7 @@ public class TvShowsHelper extends AbstractHelper {
 
     TvShowsPage tvShowsPage = new TvShowsPage();
 
-    public TvShowsHelper TvShowsHelper() {
+    public TvShowsHelper TvShowsHelper() throws InterruptedException {
         tvShowsPage.clickTvShowButton()
                 .enterSearchName()
                 .checkTvShow();
