@@ -7,7 +7,7 @@ public class MoviesNoraHelper extends AbstractHelper {
 
     MoviesNoraPage moviesNoraPage = new MoviesNoraPage();
 
-    public MoviesNoraHelper checkMoviesNora() {
+    public MoviesNoraHelper checkMoviesNora() throws InterruptedException {
         moviesNoraPage.clickMoviesButton()
                 .enterSearchMovie()
                 .checkMovies();
