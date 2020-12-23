@@ -6,7 +6,7 @@ import webNora.pages.AbstractPage;
 
 public class ViewInfoPage extends AbstractPage {
 
-    private String infoModButton = "//body/div[1]/div[1]/aside[1]/div[1]/div[2]/ul[8]/li[2]/a[1]/span[1]";
+    private String infoModButton = "//span[contains(text(),'Info')]";
     private final String noraVersion = "//td[contains(text(),'Nora version')]";
     private final String noraFrontendVersion = "//td[contains(text(),'Frontend version')]";
 

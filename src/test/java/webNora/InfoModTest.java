@@ -24,8 +24,9 @@ public class InfoModTest {
     }
 
     @Test(dependsOnMethods = "infoModTest")
-    public void checkNoraVersion() {
+    public void checkNoraVersion() throws InterruptedException {
         viewInfoHelper.checkVersionsNora();
+        Thread.sleep(2000);
         LOG.info("Check Nora Version success");
     }
 

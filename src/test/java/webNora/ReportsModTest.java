@@ -14,6 +14,7 @@ public class ReportsModTest {
     CpsReportsHelper cpsReportsHelper = new CpsReportsHelper();
     StreamReportsHelper streamReportsHelper = new StreamReportsHelper();
     ActivationAuditHelper activationAuditHelper = new ActivationAuditHelper();
+    TVodReportsHelper tVodReportsHelper = new TVodReportsHelper();
 
     @BeforeClass
     public void startUp() {
@@ -53,6 +54,13 @@ public class ReportsModTest {
         activationAuditHelper.streamReports();
         Thread.sleep(2000);
         LOG.info("Activation Audit Report SubMod success");
+    }
+
+    @Test(dependsOnMethods = "activationAuditSubModTest")
+    public void tVodReportsSubModTest() throws InterruptedException {
+        tVodReportsHelper.tVodReports();
+        Thread.sleep(2000);
+        LOG.info("TVod Report SubMod success");
     }
 
     @AfterClass

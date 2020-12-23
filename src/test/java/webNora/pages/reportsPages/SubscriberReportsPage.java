@@ -6,7 +6,7 @@ import webNora.pages.AbstractPage;
 
 public class SubscriberReportsPage extends AbstractPage {
 
-    private String subscriberReportsButton = "//body/div[1]/div[1]/aside[1]/div[1]/div[2]/ul[9]/div[1]/ul[1]/li[1]/a[1]";
+    private String subscriberReportsButton = "//span[contains(text(),'Subscriber Reports')]";
     private String checkField = "//header/div[1]/div[1]/ul[1]/li[2]/span[1]";
     private String checkText = "Reports";
 

@@ -24,7 +24,7 @@
             <class name="webNora.CategoriesAndSeriesModTest"/>
             <class name="webNora.ChannelsAndServicesModTest"/>
             <class name="webNora.DrmServiceModTest"/>
-            <class name="webNora.GeoBlockModTest"/>
+<!--            <class name="webNora.GeoBlockModTest"/>-->
             <class name="webNora.DevicesModTest"/>
             <class name="webNora.SettingsModTest"/>
             <class name="webNora.InfoModTest"/>
