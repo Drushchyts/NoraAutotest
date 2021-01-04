@@ -23,11 +23,12 @@ public class FrameworkCore {
     private static String browser = IOUtils.loadGenericProperties("browser", "configuration");
     public static String baseUrl = IOUtils.loadGenericProperties("noraUrl", "configuration");
     public static String baseUrlNoraGo = IOUtils.loadGenericProperties("noraGoUrl", "configuration");
+    public static String baseUrlShoppingCard = IOUtils.loadGenericProperties("shoppingCardUrl", "configuration");
 
 
     public static WebDriver getInstance() throws MalformedURLException {
         if (browser.equals(BrowserConstants.CHROMIUM)) {
-            URL url = new URL("http://localhost:4444/wd/hub");
+            URL url = new URL("http://127.0.0.1:4444/wd/hub");
             ChromeOptions options = new ChromeOptions();
             HashMap<String, Object> chromeLocalStatePrefs = new HashMap<>();
             List<String> experimentalFlags = new ArrayList<>();
@@ -60,6 +61,8 @@ public class FrameworkCore {
 
         } else if (browser.equals(BrowserConstants.LOCAL)) {
             ChromeOptions options = new ChromeOptions();
+            System.setProperty("webdriver.chrome.driver", "/home/adrushchyts/IdeaProjects/WorkProjectNora/chromedriver");
+            options.setBinary("/snap/chromium/1424/usr/lib/chromium-browser/chrome");  //chrome binary location specified here
             HashMap<String, Object> chromeLocalStatePrefs = new HashMap<>();
             List<String> experimentalFlags = new ArrayList<>();
             experimentalFlags.add("same-site-by-default-cookies@2");
@@ -67,21 +70,26 @@ public class FrameworkCore {
             chromeLocalStatePrefs.put("browser.enabled_labs_experiments", experimentalFlags);
             options.setExperimentalOption("localState", chromeLocalStatePrefs);
             options.addArguments("--no-sandbox");
-//            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-//            options.setExperimentalOption("useAutomationExtension", false);
-            webDriver = new ChromeDriver(options);
-            webDriver.manage().window().maximize();
+            options.setExperimentalOption("useAutomationExtension", false);
+            try {
+                webDriver = new ChromeDriver(options);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         } else if (browser.equals(BrowserConstants.JENKINS)) {
             ChromeOptions options = new ChromeOptions();
-            options.setBinary("/snap/chromium/1411/usr/lib/chromium-browser/chrome");  //chrome binary location specified here
-            options.setBinary("/usr/lib/chromium-browser/chromedriver");  //chrome binary location specified here
-            //options.addArguments("--no-sandbox");
-            options.addArguments("--headless"); //!!!should be enabled for Jenkins
-            options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
-            options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
+            URL url = new URL("http://172.17.0.2:4444/wd/hub");
+//            options.setBinary("/snap/chromium/1411/usr/lib/chromium-browser/chrome");  //chrome binary location specified here
+//            options.setBinary("/usr/lib/chromium-browser/chromedriver");  //chrome binary location specified here
+//            options.addArguments("--no-sandbox");
+//            options.addArguments("--headless"); //!!!should be enabled for Jenkins
+//            options.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
+//            options.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
+            options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+            options.setExperimentalOption("useAutomationExtension", false);
             try {
-                webDriver = new ChromeDriver(options);
+                webDriver = new RemoteWebDriver(url, options);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -89,6 +97,5 @@ public class FrameworkCore {
         return webDriver;
     }
 }
-
 
 

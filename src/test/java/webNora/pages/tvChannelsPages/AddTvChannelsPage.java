@@ -7,7 +7,7 @@ import org.testng.Assert;
 public class AddTvChannelsPage extends AbstractPage {
 
     private String tvChannelsButton = "//body/div[1]/div[1]/aside[1]/div[1]/div[2]/ul[4]/li[1]";
-    private String addChannelButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/a[1]/i[1]";
+    private String addChannelButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/a[1]";
     private String channelNameField = "//input[@id='name']";
     private String numberField = "//input[@id='numberof']";
     private String epgField = "//input[@id='epgid']";
@@ -28,6 +28,7 @@ public class AddTvChannelsPage extends AbstractPage {
 
     public AddTvChannelsPage clickAddChannelButton() throws InterruptedException {
         sleep(3000);
+        waitForElementVisible(getElementBy(addChannelButton));
         getElement(addChannelButton).click();
         return this;
     }

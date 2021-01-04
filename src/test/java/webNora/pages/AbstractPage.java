@@ -24,7 +24,7 @@ public class AbstractPage extends FrameworkCore {
     private String submit = "//button[contains(text(),'Sign in')]";
     private String checker = "//div[@class='alert alert-success alert-dismissable']";
 
-    private static WebDriver driver;
+    protected static WebDriver driver;
 
     static {
         try {
@@ -42,6 +42,11 @@ public class AbstractPage extends FrameworkCore {
 
     public void navigateNoraGo() {
         openUrl(baseUrlNoraGo);
+
+    }
+
+    public void navigateShoppingCardPage() {
+        openUrl(baseUrlShoppingCard);
 
     }
 
