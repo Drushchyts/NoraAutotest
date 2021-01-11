@@ -1,0 +1,14 @@
+version: '3'
+services:
+  standalone:
+    image: selenium/standalone-chrome:latest
+    volumes:
+    - /dev/shm:/dev/shm
+    ports:
+    - 4444:4444
+  testcom:
+    build: .
+    network_mode: host
+    ports:
+    - 8080:8080
+    command: mvn -f /home/SeleniumTestFramework/pom.xml clean test -Dbrowser="chrome"
