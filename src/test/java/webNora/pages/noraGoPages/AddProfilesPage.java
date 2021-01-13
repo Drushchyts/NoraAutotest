@@ -20,7 +20,8 @@ public class AddProfilesPage extends AbstractPage {
     }
 
     public AddProfilesPage clickProfilesButton() throws InterruptedException {
-        sleep(1000);
+        sleep(3000);
+        waitForElementVisible(getElementBy(profilesButton));
         getElement(profilesButton).click();
         return this;
     }
