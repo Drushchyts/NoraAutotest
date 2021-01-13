@@ -36,6 +36,7 @@ public class AbstractPage extends FrameworkCore {
 
 
     public void navigateAdmin() {
+        driver.manage().window().maximize();
         openUrl(baseUrl);
 
     }
@@ -47,6 +48,7 @@ public class AbstractPage extends FrameworkCore {
     }
 
     public void navigateShoppingCardPage() {
+        driver.manage().window().maximize();
         openUrl(baseUrlShoppingCard);
 
     }
