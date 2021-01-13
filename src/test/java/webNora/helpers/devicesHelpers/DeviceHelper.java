@@ -7,7 +7,7 @@ public class DeviceHelper extends AbstractHelper {
 
     DevicePage devicePage = new DevicePage();
 
-    public DeviceHelper addDevice() {
+    public DeviceHelper addDevice() throws InterruptedException {
         devicePage.clickAddDeviceButton()
                 .enterMacAddress()
                 .enterSerialNumber()
