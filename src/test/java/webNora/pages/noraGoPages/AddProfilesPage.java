@@ -14,7 +14,7 @@ public class AddProfilesPage extends AbstractPage {
     private String modalButton = "//header/div[@id='profilesModal']/div[1]/a[1]/i[1]";
 
     public AddProfilesPage clickSettingsButton() throws InterruptedException {
-        sleep(3000);
+        sleep(8000);
         getElement(settingsButton).click();
         return this;
     }

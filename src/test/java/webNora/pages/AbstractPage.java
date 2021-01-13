@@ -41,6 +41,7 @@ public class AbstractPage extends FrameworkCore {
     }
 
     public void navigateNoraGo() {
+        driver.manage().window().maximize();
         openUrl(baseUrlNoraGo);
 
     }

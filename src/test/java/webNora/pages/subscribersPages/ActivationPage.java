@@ -23,7 +23,7 @@ public class ActivationPage extends AbstractPage {
     }
 
     public ActivationPage clickSelectType() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(8000);
         getElement(selectType).click();
         waitForElementClickable(getElementBy(type));
         getElement(type).click();

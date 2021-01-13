@@ -15,7 +15,7 @@ public class DeleteDevicePage extends AbstractPage {
     }
 
     public DeleteDevicePage deleteDevice() throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         getElement(deleteDeviceButton).click();
         waitForElementClickable(getElementBy(agreeDeleteButton));
         getElement(agreeDeleteButton).click();
