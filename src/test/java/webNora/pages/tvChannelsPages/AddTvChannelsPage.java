@@ -27,8 +27,8 @@ public class AddTvChannelsPage extends AbstractPage {
     }
 
     public AddTvChannelsPage clickAddChannelButton() throws InterruptedException {
-        sleep(3000);
-        waitForElementVisible(getElementBy(addChannelButton));
+        sleep(8000);
+        waitForElementClickable(getElementBy(addChannelButton));
         getElement(addChannelButton).click();
         return this;
     }
