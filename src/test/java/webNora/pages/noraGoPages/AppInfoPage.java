@@ -7,7 +7,7 @@ import webNora.pages.AbstractPage;
 public class AppInfoPage extends AbstractPage {
 
     private String settingsButton = "//button[contains(text(),'SETTINGS')]";
-    private String appInfoButton = "//header/div[4]/ul[1]/li[7]/span[1]/ul[1]/li[1]/a[1]";
+    private String appInfoButton = "//header/div[4]/ul[1]/li[4]/span[1]/ul[1]/li[1]/a[1]";
     private String checkField = "//th[contains(text(),'Account ID')]";
     private String nameField = "Account ID";
     private String closeAppInfoButton = "//header/div[@id='sysModal']/a[@id='close-sysModal']/i[1]";

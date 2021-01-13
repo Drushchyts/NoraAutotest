@@ -30,7 +30,8 @@ public class FrameworkCore {
         if (browser.equals(BrowserConstants.CHROMIUM)) {
             URL url = new URL("http://localhost:4444/wd/hub");
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--start-maximized");
+//            options.addArguments("--start-maximized");
+//            options.addArguments("--no-sandbox");
             HashMap<String, Object> chromeLocalStatePrefs = new HashMap<>();
             List<String> experimentalFlags = new ArrayList<>();
             experimentalFlags.add("same-site-by-default-cookies@2");
@@ -64,6 +65,7 @@ public class FrameworkCore {
             ChromeOptions options = new ChromeOptions();
             System.setProperty("webdriver.chrome.driver", "/home/adrushchyts/IdeaProjects/WorkProjectNora/chromedriver");
             options.setBinary("/snap/chromium/1424/usr/lib/chromium-browser/chrome");  //chrome binary location specified here
+            options.addArguments("--start-maximized");
             HashMap<String, Object> chromeLocalStatePrefs = new HashMap<>();
             List<String> experimentalFlags = new ArrayList<>();
             experimentalFlags.add("same-site-by-default-cookies@2");

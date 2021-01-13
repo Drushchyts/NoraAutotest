@@ -5,7 +5,7 @@ import webNora.pages.AbstractPage;
 public class AddProfilesPage extends AbstractPage {
 
     private String settingsButton = "//button[contains(text(),'SETTINGS')]";
-    private String profilesButton = "//header/div[4]/ul[1]/li[7]/span[1]/ul[1]/li[2]/a[1]";
+    private String profilesButton = "//header/div[4]/ul[1]/li[4]/span[1]/ul[1]/li[2]/a[1]";
     private String newProfilesButton = "//span[contains(text(),'New Profile')]";
     private String nameProfileFieldOne = "//label[contains(text(),'Profile Name')]";
     private String nameProfileFieldTwo = "//input[@id='profile']";
@@ -14,13 +14,13 @@ public class AddProfilesPage extends AbstractPage {
     private String modalButton = "//header/div[@id='profilesModal']/div[1]/a[1]/i[1]";
 
     public AddProfilesPage clickSettingsButton() throws InterruptedException {
-        sleep(8000);
+        sleep(2000);
         getElement(settingsButton).click();
         return this;
     }
 
     public AddProfilesPage clickProfilesButton() throws InterruptedException {
-        sleep(8000);
+        sleep(2000);
         waitForElementClickable(getElementBy(profilesButton));
         getElement(profilesButton).click();
         return this;

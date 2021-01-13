@@ -99,14 +99,14 @@ public class SubscribersModTest {
         LOG.info("Check App Info success");
     }
 
-    @Test(dependsOnMethods = "checkAppInfo", skipFailedInvocations = true)
-    public void tvNoraTest() throws InterruptedException {
-        tvNoraHelper.checkTvNora();
-        Thread.sleep(2000);
-        LOG.info("Tv Nora Player success");
-    }
+//    @Test(dependsOnMethods = "checkAppInfo", skipFailedInvocations = true)
+//    public void tvNoraTest() throws InterruptedException {
+//        tvNoraHelper.checkTvNora();
+//        Thread.sleep(2000);
+//        LOG.info("Tv Nora Player success");
+//    }
 
-    @Test(dependsOnMethods = "tvNoraTest", skipFailedInvocations = true)
+    @Test(dependsOnMethods = "checkAppInfo", skipFailedInvocations = true)
     public void moviesNoraTest() throws InterruptedException {
         moviesNoraHelper.checkMoviesNora();
         Thread.sleep(2000);

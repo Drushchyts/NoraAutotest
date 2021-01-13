@@ -5,7 +5,7 @@ import webNora.pages.AbstractPage;
 public class LogOutNoraGoPage extends AbstractPage {
 
     private String settingsButton = "//button[contains(text(),'SETTINGS')]";
-    private String logOutButton = "//header/div[4]/ul[1]/li[7]/span[1]/ul[1]/li[3]/a[1]";
+    private String logOutButton = "//header/div[4]/ul[1]/li[4]/span[1]/ul[1]/li[3]/a[1]";
     private String agreeLogOutButton = "//button[contains(text(),'Yes, I want to log out')]";
 
 
