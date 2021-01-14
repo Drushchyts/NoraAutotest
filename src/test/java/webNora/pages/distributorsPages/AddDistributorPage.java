@@ -1,5 +1,6 @@
 package webNora.pages.distributorsPages;
 
+import org.openqa.selenium.By;
 import webNora.pages.AbstractPage;
 
 public class AddDistributorPage extends AbstractPage {
@@ -19,11 +20,12 @@ public class AddDistributorPage extends AbstractPage {
 
     public AddDistributorPage clickDistributorsModButton() {
         waitForElementClickable(getElementBy(distributorsButton));
-        getElement(distributorsButton).click();
+        getElementByCss(distributorsButton).click();
         return this;
     }
 
     public AddDistributorPage clickAddDistributorButton() throws InterruptedException {
+        waitForElementClickable(By.cssSelector(addDistributorButton));
         getElementByCss(addDistributorButton).click();
         return this;
     }
