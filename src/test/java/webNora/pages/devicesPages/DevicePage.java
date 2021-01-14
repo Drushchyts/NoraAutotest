@@ -1,6 +1,5 @@
 package webNora.pages.devicesPages;
 
-import org.openqa.selenium.By;
 import webNora.pages.AbstractPage;
 
 public class DevicePage extends AbstractPage {
@@ -15,7 +14,8 @@ public class DevicePage extends AbstractPage {
     private String saveDeviceButton = "//button[@id='in-save1']";
 
 
-    public DevicePage clickAddDeviceButton() {
+    public DevicePage clickAddDeviceButton() throws InterruptedException {
+        sleep(10000);
         getElement(addDeviceButton).click();
         return this;
     }

@@ -24,7 +24,8 @@ public class AddDistributorPage extends AbstractPage {
         return this;
     }
 
-    public AddDistributorPage clickAddDistributorButton() {
+    public AddDistributorPage clickAddDistributorButton() throws InterruptedException {
+        sleep(10000);
         getElement(addDistributorButton).click();
         return this;
     }
