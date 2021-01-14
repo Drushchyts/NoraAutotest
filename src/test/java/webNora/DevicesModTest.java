@@ -27,19 +27,19 @@ public class DevicesModTest {
         LOG.info("Click Device Mod success");
     }
 
-    @Test(dependsOnMethods = "devicesTest",skipFailedInvocations = true)
-    public void addDevicesTest() throws InterruptedException {
-        deviceHelper.addDevice();
-        Thread.sleep(2000);
-        LOG.info("Add Devices success");
-    }
-
-    @Test(dependsOnMethods = "addDevicesTest",skipFailedInvocations = true)
-    public void addMultipleDevicesTest() throws InterruptedException {
-        multipleDeviceHelper.addMultipleDevice();
-        Thread.sleep(2000);
-        LOG.info("Add Multiple Device success");
-    }
+//    @Test(dependsOnMethods = "devicesTest",skipFailedInvocations = true)
+//    public void addDevicesTest() throws InterruptedException {
+//        deviceHelper.addDevice();
+//        Thread.sleep(2000);
+//        LOG.info("Add Devices success");
+//    }
+//
+//    @Test(dependsOnMethods = "addDevicesTest",skipFailedInvocations = true)
+//    public void addMultipleDevicesTest() throws InterruptedException {
+//        multipleDeviceHelper.addMultipleDevice();
+//        Thread.sleep(2000);
+//        LOG.info("Add Multiple Device success");
+//    }
 
 
     @AfterClass
