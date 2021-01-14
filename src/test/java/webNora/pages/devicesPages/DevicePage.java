@@ -1,12 +1,11 @@
 package webNora.pages.devicesPages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import webNora.pages.AbstractPage;
 
 public class DevicePage extends AbstractPage {
 
-    private String addDeviceButton = ".btn.btn-primary.btn-add";
+    private String addDeviceButton = "//a[@class='btn btn-primary btn-add']";
     private String macAddressFiled = "//input[@id='mac']";
     private String macAddress = "00:11:23:45:65:44";
     private String serialNumberField = "//input[@id='serial']";
@@ -17,8 +16,8 @@ public class DevicePage extends AbstractPage {
 
 
     public DevicePage clickAddDeviceButton() throws InterruptedException {
-        waitForElementClickable(By.cssSelector(addDeviceButton));
-        getElementByCss(addDeviceButton).click();
+        sleep(10000);
+        getElement(addDeviceButton).click();
         return this;
     }
 
