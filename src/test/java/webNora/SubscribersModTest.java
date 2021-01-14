@@ -27,6 +27,7 @@ public class SubscribersModTest {
     TvNoraHelper tvNoraHelper = new TvNoraHelper();
     MoviesNoraHelper moviesNoraHelper = new MoviesNoraHelper();
     TvShowsHelper tvShowsHelper = new TvShowsHelper();
+    VerifyToaHelper verifyToaHelper = new VerifyToaHelper();
 
     @BeforeClass
     public void startUp() {
@@ -85,7 +86,14 @@ public class SubscribersModTest {
         LOG.info("Nora Open Web Test success");
     }
 
-    @Test(dependsOnMethods = "noraWebTest", skipFailedInvocations = true)
+    @Test(dependsOnMethods = "noraWebTest",skipFailedInvocations = true)
+    public void checkToa() throws InterruptedException {
+        verifyToaHelper.verifyToa();
+        Thread.sleep(2000);
+        LOG.info("Check Toa Test success");
+    }
+
+    @Test(dependsOnMethods = "checkToa", skipFailedInvocations = true)
     public void addProfilesWeb() throws InterruptedException {
         addProfilesHelper.addNewProfiles();
         Thread.sleep(2000);

@@ -15,6 +15,7 @@ public class AddProfilesPage extends AbstractPage {
 
     public AddProfilesPage clickSettingsButton() throws InterruptedException {
         sleep(2000);
+        waitForElementClickable(getElementBy(settingsButton));
         getElement(settingsButton).click();
         return this;
     }

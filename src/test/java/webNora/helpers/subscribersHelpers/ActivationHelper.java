@@ -13,7 +13,6 @@ public class ActivationHelper extends AbstractHelper {
                 .clickDaysCheckBox()
                 .enterDays()
                 .selectCashLocation()
-                .checkPayment()
                 .enterTotal()
                 .clickProcess();
         return this;

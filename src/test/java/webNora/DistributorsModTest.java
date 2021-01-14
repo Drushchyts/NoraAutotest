@@ -26,19 +26,19 @@ public class DistributorsModTest {
         LOG.info("Click Distributor Mod success");
     }
 
-//    @Test(dependsOnMethods = "distributorModTest",skipFailedInvocations = true)
-//    public void addDistributor() throws InterruptedException {
-//        addDistributorHelper.addDistributor();
-//        Thread.sleep(1000);
-//        LOG.info("Add Distributor Mod success");
-//    }
-//
-//    @Test(dependsOnMethods = "addDistributor",skipFailedInvocations = true)
-//    public void checkAndDeleteDistributor() throws InterruptedException {
-//        checkAndDeleteDistributorHelper.checkAndDeleteDistributor();
-//        Thread.sleep(1000);
-//        LOG.info("Check and Delete Distributor Mod success");
-//    }
+    @Test(dependsOnMethods = "distributorModTest",skipFailedInvocations = true)
+    public void addDistributor() throws InterruptedException {
+        addDistributorHelper.addDistributor();
+        Thread.sleep(1000);
+        LOG.info("Add Distributor Mod success");
+    }
+
+    @Test(dependsOnMethods = "addDistributor",skipFailedInvocations = true)
+    public void checkAndDeleteDistributor() throws InterruptedException {
+        checkAndDeleteDistributorHelper.checkAndDeleteDistributor();
+        Thread.sleep(1000);
+        LOG.info("Check and Delete Distributor Mod success");
+    }
 
     @AfterClass
     public void tearDown() {
