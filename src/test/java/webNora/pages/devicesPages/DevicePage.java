@@ -5,7 +5,7 @@ import webNora.pages.AbstractPage;
 
 public class DevicePage extends AbstractPage {
 
-    private String addDeviceButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/a[1]/i[1]";
+    private String addDeviceButton = "//a[@class='btn btn-primary btn-add']";
     private String macAddressFiled = "//input[@id='mac']";
     private String macAddress = "00:11:23:45:65:44";
     private String serialNumberField = "//input[@id='serial']";
@@ -15,8 +15,7 @@ public class DevicePage extends AbstractPage {
     private String saveDeviceButton = "//button[@id='in-save1']";
 
 
-    public DevicePage clickAddDeviceButton() throws InterruptedException {
-        sleep(10000);
+    public DevicePage clickAddDeviceButton() {
         getElement(addDeviceButton).click();
         return this;
     }
