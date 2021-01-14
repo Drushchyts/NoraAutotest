@@ -34,7 +34,7 @@ public class DevicesModTest {
         LOG.info("Add Devices success");
     }
 
-    @Test(dependsOnMethods = "addDevicesTest")
+    @Test(dependsOnMethods = "addDevicesTest",skipFailedInvocations = true)
     public void addMultipleDevicesTest() throws InterruptedException {
         multipleDeviceHelper.addMultipleDevice();
         Thread.sleep(2000);
