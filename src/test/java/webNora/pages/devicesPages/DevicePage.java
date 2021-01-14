@@ -1,5 +1,6 @@
 package webNora.pages.devicesPages;
 
+import org.openqa.selenium.WebElement;
 import webNora.pages.AbstractPage;
 
 public class DevicePage extends AbstractPage {
@@ -15,7 +16,6 @@ public class DevicePage extends AbstractPage {
 
 
     public DevicePage clickAddDeviceButton() throws InterruptedException {
-        waitForElementClickable(getElementByClass(addDeviceButton));
         getElementByCss(addDeviceButton).click();
         return this;
     }
