@@ -20,7 +20,7 @@ public class AddDistributorPage extends AbstractPage {
 
     public AddDistributorPage clickDistributorsModButton() {
         waitForElementClickable(getElementBy(distributorsButton));
-        getElementByCss(distributorsButton).click();
+        getElement(distributorsButton).click();
         return this;
     }
 
