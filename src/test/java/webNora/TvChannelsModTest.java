@@ -24,7 +24,7 @@ public class TvChannelsModTest {
         LOG.info("Click Tv Channel Mod success");
     }
 
-    @Test(dependsOnMethods = "tvChannelsTest")
+    @Test(dependsOnMethods = "tvChannelsTest",skipFailedInvocations = true)
     public void addChannel() throws InterruptedException {
         addTvChannelsHelper.addChannel();
         LOG.info("Add Channel success");

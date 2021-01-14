@@ -34,7 +34,6 @@ public class AddTvChannelsPage extends AbstractPage {
 
     public AddTvChannelsPage enterName() throws InterruptedException {
         Thread.sleep(2000);
-        waitForElementVisible(getElementBy(channelNameField));
         getElement(channelNameField).sendKeys(nameChannel);
         return this;
     }

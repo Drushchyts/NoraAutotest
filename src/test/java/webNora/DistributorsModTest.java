@@ -26,7 +26,7 @@ public class DistributorsModTest {
         LOG.info("Click Distributor Mod success");
     }
 
-    @Test(dependsOnMethods = "distributorModTest")
+    @Test(dependsOnMethods = "distributorModTest",skipFailedInvocations = true)
     public void addDistributor() throws InterruptedException {
         addDistributorHelper.addDistributor();
         Thread.sleep(1000);
