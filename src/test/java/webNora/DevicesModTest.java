@@ -27,7 +27,7 @@ public class DevicesModTest {
         LOG.info("Click Device Mod success");
     }
 
-    @Test(dependsOnMethods = "devicesTest")
+    @Test(dependsOnMethods = "devicesTest",skipFailedInvocations = true)
     public void addDevicesTest() throws InterruptedException {
         deviceHelper.addDevice();
         Thread.sleep(2000);

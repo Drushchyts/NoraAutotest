@@ -30,7 +30,7 @@ public class TvChannelsModTest {
         LOG.info("Add Channel success");
     }
 
-    @Test(dependsOnMethods = "addChannel")
+    @Test(dependsOnMethods = "addChannel",skipFailedInvocations = true)
     public void deleteChannel() {
         deleteTvChannelHelper.deleteChannel();
         LOG.info("Delete Channel success");

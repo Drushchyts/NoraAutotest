@@ -33,7 +33,7 @@ public class DistributorsModTest {
         LOG.info("Add Distributor Mod success");
     }
 
-    @Test(dependsOnMethods = "addDistributor")
+    @Test(dependsOnMethods = "addDistributor",skipFailedInvocations = true)
     public void checkAndDeleteDistributor() throws InterruptedException {
         checkAndDeleteDistributorHelper.checkAndDeleteDistributor();
         Thread.sleep(1000);

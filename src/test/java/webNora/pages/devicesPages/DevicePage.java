@@ -4,7 +4,7 @@ import webNora.pages.AbstractPage;
 
 public class DevicePage extends AbstractPage {
 
-    private String addDeviceButton = "/html[1]/body[1]/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/a[1]";
+    private String addDeviceButton = "//*[@id=\"app-content\"]/div/ui-view/ui-view/div/div[1]/div[1]/a";
     private String macAddressFiled = "//input[@id='mac']";
     private String macAddress = "00:11:23:45:65:44";
     private String serialNumberField = "//input[@id='serial']";
