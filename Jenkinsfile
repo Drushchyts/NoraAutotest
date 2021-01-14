@@ -3,14 +3,28 @@ pipeline {
     stages {
         stage('git clone'){
             steps{
+                echo 'cloning project'
                 git 'https://github.com/Drushchyts/NoraAutotest.git'
+                sh 'sudo apt-get update'
              }
         }
+
+        stage('update'){
+            steps{
+                sh 'sudo apt-get update'
+             }
+        }
+
         stage('Build') {
             steps {
-                sh 'ls -la'
-                sh 'sudo docker-compose build'
-                sh 'sudo docker-compose up'
+                sh 'sudo docker start chrometest'
+                sh 'mvn clean test'
+            }
+        }
+
+        stage('stop chrome') {
+            steps {
+                sh 'sudo docker stop chrometest'
             }
         }
     }
