@@ -5,7 +5,6 @@ pipeline {
             steps{
                 echo 'cloning project'
                 git 'https://github.com/Drushchyts/NoraAutotest.git'
-                sh 'sudo apt-get update'
              }
         }
 
@@ -15,14 +14,19 @@ pipeline {
              }
         }
 
-        stage('Build') {
-            steps {
+        stage('start chrometest') {
+             steps {
                 sh 'sudo docker start chrometest'
+                    }
+                }
+
+        stage('run test') {
+            steps {
                 sh 'mvn clean test'
             }
         }
 
-        stage('stop chrome') {
+        stage('stop chrometest') {
             steps {
                 sh 'sudo docker stop chrometest'
             }
