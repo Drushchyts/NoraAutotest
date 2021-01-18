@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import webNora.helpers.devicesHelpers.AddDevicesHelper;
 import org.testng.annotations.Test;
+import webNora.helpers.devicesHelpers.CheckAndDeleteDeviceHelper;
 import webNora.helpers.devicesHelpers.DeviceHelper;
 import webNora.helpers.devicesHelpers.MultipleDeviceHelper;
 
@@ -14,6 +15,7 @@ public class DevicesModTest {
     AddDevicesHelper addDevicesHelper = new AddDevicesHelper();
     DeviceHelper deviceHelper = new DeviceHelper();
     MultipleDeviceHelper multipleDeviceHelper = new MultipleDeviceHelper();
+    CheckAndDeleteDeviceHelper  checkAndDeleteDeviceHelper = new CheckAndDeleteDeviceHelper();
 
     @BeforeClass
     public void startUp() {
@@ -41,6 +43,12 @@ public class DevicesModTest {
         LOG.info("Add Multiple Device success");
     }
 
+    @Test(dependsOnMethods = "addMultipleDevicesTest", skipFailedInvocations = true, invocationCount = 4)
+    public void checkAndDeleteDevice() throws InterruptedException {
+        checkAndDeleteDeviceHelper.checkAndDeleteDevice();
+        Thread.sleep(2000);
+        LOG.info("Check and Delete Device success");
+    }
 
     @AfterClass
     public void tearDown() {
