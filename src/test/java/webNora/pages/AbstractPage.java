@@ -183,6 +183,7 @@ public class AbstractPage extends FrameworkCore {
     }
 
     public void executorWait(String element){
+        waitForElementClickable(getElementBy(element));
         WebElement ele = getElement(element);
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", ele);

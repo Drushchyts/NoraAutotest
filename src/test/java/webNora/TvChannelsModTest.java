@@ -19,20 +19,23 @@ public class TvChannelsModTest {
     }
 
     @Test
-    public void tvChannelsTest() {
+    public void tvChannelsTest() throws InterruptedException {
         addTvChannelsHelper.clickTvChannelsButton();
+        Thread.sleep(2000);
         LOG.info("Click Tv Channel Mod success");
     }
 
-    @Test(dependsOnMethods = "tvChannelsTest",skipFailedInvocations = true)
+    @Test(dependsOnMethods = "tvChannelsTest", alwaysRun = true, skipFailedInvocations = true)
     public void addChannel() throws InterruptedException {
         addTvChannelsHelper.addChannel();
+        Thread.sleep(2000);
         LOG.info("Add Channel success");
     }
 
-    @Test(dependsOnMethods = "addChannel",skipFailedInvocations = true)
-    public void deleteChannel() {
+    @Test(dependsOnMethods = "addChannel", alwaysRun = true, skipFailedInvocations = true)
+    public void deleteChannel() throws InterruptedException {
         deleteTvChannelHelper.deleteChannel();
+        Thread.sleep(2000);
         LOG.info("Delete Channel success");
     }
 
