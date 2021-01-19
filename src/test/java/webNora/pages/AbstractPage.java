@@ -101,7 +101,7 @@ public class AbstractPage extends FrameworkCore {
     public static void waitForElementVisible(By by) {
         try {
             WebDriverWait waiter = new WebDriverWait(driver, 10);
-            waiter.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+            waiter.until(ExpectedConditions.presenceOfElementLocated(by));
         } catch (Throwable e) {
             System.out.println(e.getMessage());
         }
