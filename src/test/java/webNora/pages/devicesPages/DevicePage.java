@@ -15,8 +15,9 @@ public class DevicePage extends AbstractPage {
 
 
     public DevicePage clickAddDeviceButton() throws InterruptedException {
-        sleep(10000);
-        getElement(addDeviceButton).click();
+        sleep(2000);
+        executorWait(addDeviceButton);
+//        getElement(addDeviceButton).click();
         return this;
     }
 

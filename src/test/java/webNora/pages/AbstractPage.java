@@ -182,6 +182,12 @@ public class AbstractPage extends FrameworkCore {
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
+    public void executorWait(String element){
+        WebElement ele = getElement(element);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", ele);
+    }
+
     public void jsScroll() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,600)", " ");

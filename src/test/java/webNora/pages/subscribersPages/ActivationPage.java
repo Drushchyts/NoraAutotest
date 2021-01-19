@@ -1,7 +1,5 @@
 package webNora.pages.subscribersPages;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 import webNora.pages.AbstractPage;
 
 public class ActivationPage extends AbstractPage {
@@ -19,10 +17,10 @@ public class ActivationPage extends AbstractPage {
     private String daysField = "//input[@id='sublength']";
 
     public ActivationPage clickActivationButton() throws InterruptedException {
-
-        WebElement element = getElement(activationButton);
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", element);
+        executorWait(activationButton);
+//        WebElement element = getElement(activationButton);
+//        JavascriptExecutor executor = (JavascriptExecutor)driver;
+//        executor.executeScript("arguments[0].click();", element);
 //        Thread.sleep(2000);
 //        waitForElementClickable(getElementBy(activationButton));
 //        getElement(activationButton).click();
