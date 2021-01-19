@@ -7,7 +7,7 @@ public class AddDistributorHelper extends AbstractHelper {
 
     AddDistributorPage addDistributorPage = new AddDistributorPage();
 
-    public AddDistributorHelper clickDistributors() {
+    public AddDistributorHelper clickDistributors() throws InterruptedException {
         addDistributorPage.clickDistributorsModButton();
         return this;
     }

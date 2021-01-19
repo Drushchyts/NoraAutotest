@@ -18,7 +18,8 @@ public class AddDistributorPage extends AbstractPage {
     private String createDistributorButton = "//button[@id='p-save1']";
     private String cancelButton = "//a[@id='p-cancel']";
 
-    public AddDistributorPage clickDistributorsModButton() {
+    public AddDistributorPage clickDistributorsModButton() throws InterruptedException {
+        sleep(2000);
         waitForElementClickable(getElementBy(distributorsButton));
         getElement(distributorsButton).click();
         return this;
