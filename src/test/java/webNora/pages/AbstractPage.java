@@ -184,8 +184,8 @@ public class AbstractPage extends FrameworkCore {
 
     public void executorWait(String element){
         WebElement ele = getElement(element);
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", ele);
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();", ele);
     }
 
     public void jsScroll() {
