@@ -6,7 +6,7 @@ import webNora.pages.AbstractPage;
 public class AddDistributorPage extends AbstractPage {
 
     private String distributorsButton = "//span[contains(text(),'Distributors')]";
-    private String addDistributorButton = "//a[@class='btn btn-primary btn-add']";
+    private String addDistributorButton = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/div[1]/div[1]/div[1]/a[1]/i[1]";
     private String packageField = "//body/div[1]/div[2]/div[2]/section[1]/div[1]/ui-view[1]/ui-view[1]/ui-view[1]/div[1]/div[3]/div[1]/form[1]/fieldset[1]/div[1]/div[1]/div[1]/div[1]/a[1]/span[3]/b[1]";
     private String selectPackage = "//span[contains(text(),'\"November2020\"')]";
     private String firstNameField = "//input[@id='firstname']";
@@ -25,7 +25,7 @@ public class AddDistributorPage extends AbstractPage {
     }
 
     public AddDistributorPage clickAddDistributorButton() throws InterruptedException {
-        sleep(10000);
+        sleep(5000);
         executorWait(addDistributorButton);
 //        getElement(addDistributorButton).click();
         return this;
