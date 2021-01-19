@@ -22,21 +22,21 @@ public class DistributorsModTest {
     @Test
     public void distributorModTest() throws InterruptedException {
         addDistributorHelper.clickDistributors();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         LOG.info("Click Distributor Mod success");
     }
 
     @Test(dependsOnMethods = "distributorModTest",skipFailedInvocations = true)
     public void addDistributor() throws InterruptedException {
         addDistributorHelper.addDistributor();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         LOG.info("Add Distributor Mod success");
     }
 
     @Test(dependsOnMethods = "addDistributor",skipFailedInvocations = true)
     public void checkAndDeleteDistributor() throws InterruptedException {
         checkAndDeleteDistributorHelper.checkAndDeleteDistributor();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         LOG.info("Check and Delete Distributor Mod success");
     }
 
