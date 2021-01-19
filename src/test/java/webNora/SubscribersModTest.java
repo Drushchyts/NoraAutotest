@@ -86,7 +86,7 @@ public class SubscribersModTest {
         LOG.info("Nora Open Web Test success");
     }
 
-    @Test(dependsOnMethods = "noraWebTest",skipFailedInvocations = true)
+    @Test(dependsOnMethods = "noraWebTest", skipFailedInvocations = true)
     public void checkToa() throws InterruptedException {
         verifyToaHelper.verifyToa();
         Thread.sleep(2000);

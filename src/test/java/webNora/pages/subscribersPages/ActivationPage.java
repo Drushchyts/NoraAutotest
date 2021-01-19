@@ -1,5 +1,7 @@
 package webNora.pages.subscribersPages;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import webNora.pages.AbstractPage;
 
 public class ActivationPage extends AbstractPage {
@@ -17,8 +19,13 @@ public class ActivationPage extends AbstractPage {
     private String daysField = "//input[@id='sublength']";
 
     public ActivationPage clickActivationButton() throws InterruptedException {
-        Thread.sleep(2000);
-        getElement(activationButton).click();
+
+        WebElement element = getElement(activationButton);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+//        Thread.sleep(2000);
+//        waitForElementClickable(getElementBy(activationButton));
+//        getElement(activationButton).click();
         return this;
     }
 
@@ -43,6 +50,7 @@ public class ActivationPage extends AbstractPage {
     }
 
     public ActivationPage selectCashLocation() {
+        waitForElementClickable(getElementBy(cashLocation));
         getElement(cashLocation).click();
         waitForElementClickable(getElementBy(selectCashLocation));
         getElement(selectCashLocation).click();
@@ -55,6 +63,7 @@ public class ActivationPage extends AbstractPage {
     }
 
     public ActivationPage clickProcess() {
+        waitForElementClickable(getElementBy(processButton));
         getElement(processButton).click();
         jsScrollUp();
         return this;
