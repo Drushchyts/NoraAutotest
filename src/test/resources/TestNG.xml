@@ -18,14 +18,14 @@
             <class name="webNora.DashboardModTest"/>
 <!--            <class name="webNora.PackagesModTest"/>-->
 <!--            <class name="webNora.SubscribersModTest"/>-->
-<!--            <class name="webNora.TvChannelsModTest"/>-->
+            <class name="webNora.TvChannelsModTest"/>
 <!--            <class name="webNora.RadioChannelsModTest"/>-->
 <!--            <class name="webNora.VideoOnDemandModTest"/>-->
 <!--            <class name="webNora.CategoriesAndSeriesModTest"/>-->
 <!--            <class name="webNora.ChannelsAndServicesModTest"/>-->
 <!--            <class name="webNora.DrmServiceModTest"/>-->
 <!--            &lt;!&ndash;            <class name="webNora.GeoBlockModTest"/>&ndash;&gt;-->
-<!--            <class name="webNora.DevicesModTest"/>-->
+            <class name="webNora.DevicesModTest"/>
 <!--            <class name="webNora.SettingsModTest"/>-->
 <!--            <class name="webNora.InfoModTest"/>-->
 <!--            <class name="webNora.UsersModTest"/>-->
